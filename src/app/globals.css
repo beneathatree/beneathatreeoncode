@@ -1,8 +1,19 @@
+/* 1️⃣ Import Google Fonts at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+/* 2️⃣ Then Tailwind import */
 @import "tailwindcss";
 
+/* Root variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --link-color: #888888; /* default link color */
+  --link-hover: #000000; /* link hover color */
+  --font-sans: 'Arial', 'Helvetica', sans-serif;
+  --font-figtree: 'Figtree', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
 }
 
 @theme inline {
@@ -22,5 +33,23 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Utility classes */
+.font-figtree {
+  font-family: var(--font-figtree);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair);
+}
+
+.text-link {
+  color: var(--link-color);
+  transition: color 0.2s ease-in-out;
+}
+
+.text-link:hover {
+  color: var(--link-hover);
 }

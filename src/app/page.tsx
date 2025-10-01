@@ -1,103 +1,138 @@
+"use client";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
-export default function Home() {
+export default function HomePage() {
+  const illustrationRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const el = illustrationRef.current;
+      if (el) {
+        // Parallax effect: move illustration up slower than scroll
+        const parallax = scrollY * 0.35;
+        el.style.transform = `translateY(-${parallax}px)`;
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      {/* Hero Section */}
+  <section className="py-24 text-white" style={{ backgroundColor: "#4DB898" }}>
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex flex-col items-center">
+          <h1 className="text-center">
+            <span
+              className="block font-playfair font-semibold italic text-center text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[86px] mb-2"
+              style={{ letterSpacing: '-2px', lineHeight: '1.1em' }}
+            >
+              Bespoke
+            </span>
+            <span
+              className="block font-figtree font-extrabold text-center leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[78px]"
+              style={{ letterSpacing: '-2px' }}
+            >
+              Software
+            </span>
+            <span
+              className="block font-figtree font-extrabold text-center leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[78px] mt-1"
+              style={{ letterSpacing: '-2px' }}
+            >
+              Consultancy
+            </span>
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
+            className="mt-5 max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl text-white text-center mx-auto font-figtree font-medium text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+            style={{ lineHeight: 1.4 }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <div style={{ marginBottom: '-6px' }}>Transform your expertise into thoughtful products, built with love and precision.</div>
+            <div>It doesn't matter whether you're a solopreneur, startup or enterprise.</div>
+          <div
+            className="max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl text-white text-center mx-auto font-figtree font-bold mt-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl"
+            style={{ lineHeight: 1.3 }}
+          >
+            We'll play the long game, with you.
+          </div>
+          </div>
+
+          <a
+            href="https://calendly.com/rohit-beneathatree/introduction"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-block px-6 py-3 rounded-lg font-semibold font-figtree transition-transform duration-200 ease-in-out hover:scale-105"
+            style={{ backgroundColor: "#fff", color: "#4DB898" }}
+          >
+            Schedule a Call
+          </a>
+
+          <div
+            ref={illustrationRef}
+            className="relative inset-0 z-0 w-screen h-screen pointer-events-none"
+            style={{ top: '-320px', willChange: 'transform' }}
+          >
+            <img
+              src="/illustrations/hero.svg"
+              alt="Consultancy Illustration"
+              className="w-full h-full object-contain"
+              style={{ minHeight: '100vh', minWidth: '100vw' }}
+              draggable="false"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+
+          {/* Early-stage startups and Solopreneurs Section (mobile-first responsive) */}
+          <section className="w-full py-12 md:py-24 bg-gradient-to-b from-[#b7e1d3] to-white flex justify-center items-center">
+            <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 gap-6 md:gap-12">
+              <div className="flex justify-center w-full md:w-1/2 mb-8 md:mb-0">
+                <img
+                  src="/illustrations/early.svg"
+                  alt="Early-stage Illustration"
+                  className="rounded-2xl shadow-xl w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto"
+                  draggable="false"
+                />
+              </div>
+              <div className="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left">
+                <h2 className="font-figtree font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-[#171717] mb-4 md:mb-6 leading-tight">
+                  Early-stage startups<br className="hidden md:block" />and Solopreneurs
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 font-figtree mb-2">
+                  We'll build a lean MVP to help you reach the market.<br className="hidden md:block" />
+                  Once validated, we'll make sure your product grows -<br className="hidden md:block" />
+                  while being secure, scalable, and reliable.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      </section>
+
+      {/* Work Section */}
+      <section className="max-w-6xl mx-auto py-16 px-6 text-left">
+        <h2 className="text-3xl font-bold mb-8">Our Work</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="p-6 border rounded-lg">Uplift – Optimizing human movement with AI.</div>
+          <div className="p-6 border rounded-lg">Digifarm – Add effects and capture attention.</div>
+          <div className="p-6 border rounded-lg">Speak2 – Design your site on a familiar free-form canvas.</div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-green-50 text-center">
+        <h2 className="text-3xl font-bold mb-4">Let’s build great products, together.</h2>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://calendly.com/rohit-beneathatree/introduction"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
+          className="px-6 py-3 rounded-lg font-semibold text-white"
+          style={{ backgroundColor: "#4DB898" }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Schedule a Call
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
+
