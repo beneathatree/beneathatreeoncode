@@ -1,9 +1,11 @@
 "use client";
+
 import { useEffect } from "react";
 import Image from "next/image";
 import ContactCta from "../components/ContactCta";
 import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
+import CallToAction from "@/components/CallToAction";
 
 export default function HomePage() {
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Gradient wrapper only for Hero + Cards */}
+      {/* Gradient wrapper for Hero + Cards */}
       <div
         className="w-full h-full min-h-full overflow-x-hidden"
         style={{
@@ -54,11 +56,11 @@ export default function HomePage() {
             <div className="mt-5 max-w-4xl text-center text-lg sm:text-xl md:text-2xl font-figtree font-medium text-white">
               Transform your expertise into thoughtful products, built with love and precision.
               <br />
-              It doesn&apos;t matter whether you&apos;re a solopreneur, startup or enterprise.
+              It doesn’t matter whether you’re a solopreneur, startup or enterprise.
             </div>
 
             <div className="font-figtree font-bold mt-6 text-lg sm:text-xl md:text-2xl text-white">
-              We&apos;ll play the long game, with you.
+              We’ll play the long game, with you.
             </div>
 
             <a
@@ -89,7 +91,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Cards Section — Alternating Layout */}
+        {/* Cards Section */}
         <section className="relative z-30 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24 space-y-24">
           {/* Row 1 */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-24 max-w-[1600px] mx-auto">
@@ -107,15 +109,14 @@ export default function HomePage() {
             </div>
             <div className="max-w-[480px] text-left">
               <h2 className="font-figtree font-bold text-5xl leading-tight text-[#171717] mb-4">
-                Early-stage startups<br />
-                and Solopreneurs
+                Early-stage startups<br />and Solopreneurs
               </h2>
               <p
                 className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
                 style={{ letterSpacing: "-0.4px" }}
               >
-                We&apos;ll build a lean MVP to help you reach the market.<br />
-                Once validated, we&apos;ll make sure your product grows -<br />
+                We’ll build a lean MVP to help you reach the market.<br />
+                Once validated, we’ll make sure your product grows —<br />
                 while being secure, scalable, and reliable.
               </p>
             </div>
@@ -140,7 +141,7 @@ export default function HomePage() {
                 className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
                 style={{ letterSpacing: "-0.4px" }}
               >
-                Already have engineers? We&apos;ll complement your<br />
+                Already have engineers? We’ll complement your<br />
                 team on specific projects, freeing them to focus on<br />
                 what they do best.
               </p>
@@ -160,15 +161,14 @@ export default function HomePage() {
             </div>
             <div className="max-w-[480px] text-left">
               <h2 className="font-figtree font-bold text-5xl leading-tight text-[#171717] mb-4">
-                Established businesses<br />
-                and Enterprises
+                Established businesses<br />and Enterprises
               </h2>
               <p
                 className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
                 style={{ letterSpacing: "-0.4px" }}
               >
                 Have an idea to boost efficiency or disrupt your<br />
-                industry? We&apos;ll craft a lean, lovable product and<br />
+                industry? We’ll craft a lean, lovable product and<br />
                 smoothly transition it to your team.
               </p>
             </div>
@@ -176,10 +176,11 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* New components outside gradient */}
+      {/* Outside gradient */}
       <ContactCta />
       <OurWork />
       <Testimonials />
+      <CallToAction />
     </>
   );
 }
