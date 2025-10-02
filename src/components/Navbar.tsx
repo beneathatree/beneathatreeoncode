@@ -69,7 +69,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             className="px-4 py-2 rounded-lg font-figtree font-medium text-white text-base transition-transform duration-200 ease-in-out hover:scale-[1.03]"
-            style={{ backgroundColor: "#4DB898" }}
+            style={{ backgroundColor: "#42A185" }}
           >
             Schedule a Call
           </a>
