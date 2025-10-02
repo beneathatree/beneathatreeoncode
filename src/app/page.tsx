@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+// 1. IMPORT the new ContactCta component
+import ContactCta from "../components/ContactCta";
 
 export default function HomePage() {
   return (
@@ -154,6 +156,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      
+      {/* 2. INSERT the new ContactCta component here, immediately after the Cards Section */}
+      <ContactCta />
+      
     </div>
   );
 }
