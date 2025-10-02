@@ -34,14 +34,13 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-6px); /* very subtle */
+    transform: translateY(-6px);
   }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
-
 
 /* Utility classes */
 .font-figtree {
