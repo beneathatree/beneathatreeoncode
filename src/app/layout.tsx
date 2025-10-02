@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Beneathatree | Software Consultancy",
+  title: "BeneathAtree",
   description: "Bespoke software consultancy for startups, solopreneurs, and enterprises.",
 };
 
