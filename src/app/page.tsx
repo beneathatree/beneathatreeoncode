@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-// 1. IMPORT the new ContactCta component
 import ContactCta from "../components/ContactCta";
 
 export default function HomePage() {
@@ -8,6 +7,7 @@ export default function HomePage() {
     <div
       className="min-h-screen"
       style={{
+        // REVERTED to the original light green: #55C1A0
         background:
           "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 40%, #fdfdfd 60%, #ffffff 100%)",
       }}
@@ -53,8 +53,9 @@ export default function HomePage() {
             href="https://calendly.com/rohit-beneathatree/introduction"
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-block px-6 py-3 rounded-lg font-semibold transition-transform duration-200 ease-in-out hover:scale-105"
-            style={{ backgroundColor: "#fff", color: "#4DB898" }}
+            className="mt-6 inline-block px-6 py-4 rounded-lg font-figtree font-semibold text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
+            // UPDATED: Background is white, text color is now a darker green (#3A8C70)
+            style={{ backgroundColor: "#fff", color: "#3A8C70" }}
           >
             Schedule a Call
           </a>
@@ -157,7 +158,7 @@ export default function HomePage() {
         </div>
       </section>
       
-      {/* 2. INSERT the new ContactCta component here, immediately after the Cards Section */}
+      {/* Contact CTA */}
       <ContactCta />
       
     </div>
