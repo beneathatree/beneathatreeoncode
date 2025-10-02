@@ -27,8 +27,17 @@ export default function Navbar() {
 
   return (
     <div className="relative z-50">
-      {/* Navbar - Vertical padding changed to py-4 for thickness */}
-      <nav className="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 bg-white shadow z-50">
+      {/* Navbar - Applied transparent white background using inline style */}
+      <nav 
+        className="fixed top-0 left-0 w-full flex justify-between items-center px-6 py-4 shadow z-50"
+        style={{ 
+          // 90% opaque white (10% transparency)
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          // Optional: Add a subtle blur effect for a modern 'frosted glass' look
+          backdropFilter: "blur(4px)",
+          WebkitBackdropFilter: "blur(3px)", // For better browser support
+        }}
+      >
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center">
@@ -87,7 +96,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown (Remains opaque for legibility) */}
       <div
         ref={menuRef}
         className={`fixed top-[72px] left-0 w-full bg-white md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out shadow-[0_8px_32px_rgba(77,184,152,0.12)] ${
