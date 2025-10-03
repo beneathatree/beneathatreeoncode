@@ -34,20 +34,52 @@ const people: Person[] = [
 
 export default function OurPeople() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold text-center mb-12">Our People</h1>
-      <div className="grid md:grid-cols-3 gap-8">
-        {people.map((p, i) => (
-          <div key={i} className="border rounded-lg shadow hover:shadow-lg transition p-4 text-center">
-            <img
-              src={p.img}
-              alt={p.name}
-              className="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h2 className="text-xl font-semibold">{p.name}</h2>
-            <p className="text-gray-600">{p.role}</p>
-          </div>
-        ))}
+    <div className="bg-[#F4FAF9] min-h-screen px-6 py-16">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-12">Our People</h1>
+        <div className="grid md:grid-cols-3 gap-8 justify-center">
+          {people.map((p, i) => (
+            <div
+              key={i}
+              className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-md"
+              style={{ width: 328, height: 411 }}
+            >
+              {/* Image Section */}
+              <div style={{ height: 265 }}>
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Content Section */}
+              <div
+                className="flex flex-col justify-between items-start px-6 pt-4 pb-2 bg-white rounded-b-lg"
+                style={{ height: 146 }}
+              >
+                <div>
+                  <h2 className="font-figtree font-semibold text-[40px] text-black leading-none tracking-tight">
+                    {p.name}
+                  </h2>
+                  <p className="font-figtree font-medium text-[17px] text-[#888888] mt-2 tracking-tight">
+                    {p.role}
+                  </p>
+                </div>
+
+                {/* Social Icons */}
+                <div className="flex gap-4 mt-4">
+                  <a href="#" target="_blank" rel="noreferrer">
+                    <img src="/icons/instagram.svg" alt="Instagram" className="w-5 h-5" />
+                  </a>
+                  <a href="#" target="_blank" rel="noreferrer">
+                    <img src="/icons/github.svg" alt="GitHub" className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
