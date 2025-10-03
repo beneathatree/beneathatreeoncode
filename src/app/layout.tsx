@@ -11,6 +11,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ Load Playfair Display Semibold Italic */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">{children}</main>

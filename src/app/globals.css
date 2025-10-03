@@ -1,6 +1,6 @@
 /* 1️⃣ Import Google Fonts at the very top */
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 
 /* 2️⃣ Then Tailwind import */
 @import "tailwindcss";
