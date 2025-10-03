@@ -23,20 +23,20 @@ const people: Person[] = [
   { name: "Sachin", role: "Co-Founder", img: "/people/sachin.jpg" },
   { name: "Sagar", role: "Operations Manager", img: "/people/sagar.jpg" },
   { name: "Srinidhi", role: "Co-Founder", img: "/people/srinidhi.jpg" },
-  { name: "Sharik", role: "Full-Stack Developer", img: "/people/sharik.jpg" },
+  { name: "Sharikh", role: "Full-Stack Developer", img: "/people/sharikh.jpg" },
   { name: "Shashank", role: "Full-Stack Developer", img: "/people/shashank.jpg" },
   { name: "Sumit", role: "Full-Stack Developer", img: "/people/sumit.jpg" },
   { name: "Tasavour", role: "Full-Stack Developer", img: "/people/tasavour.jpg" },
   { name: "Tharun", role: "Android Developer", img: "/people/tharun.jpg" },
   { name: "Vijay", role: "Cook and Caretaker", img: "/people/vijay.jpg" },
-  { name: "Yeana", role: "Office Administrator", img: "/people/yeana.jpg" },
+  { name: "Yaana", role: "Office Administrator", img: "/people/yaana.jpg" },
 ];
 
 export default function OurPeople() {
   return (
     <div className="bg-[#F4FAF9] min-h-screen px-6 py-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12">Our People</h1>
+        <h1 className="font-figtree font-bold text-[50px] text-black text-center tracking-tight mt-12 mb-12"> Our People</h1>
         <div className="grid md:grid-cols-3 gap-8 justify-center">
           {people.map((p, i) => (
             <div
