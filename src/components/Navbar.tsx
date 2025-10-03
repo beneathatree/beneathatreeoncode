@@ -14,8 +14,12 @@ export default function Navbar() {
       const targetNode = event.target as Node | null;
       if (!targetNode) return;
 
-      const clickedOutsideMenu = menuRef.current ? !menuRef.current.contains(targetNode) : true;
-      const clickedHamburger = buttonRef.current ? buttonRef.current.contains(targetNode) : false;
+      const clickedOutsideMenu = menuRef.current
+        ? !menuRef.current.contains(targetNode)
+        : true;
+      const clickedHamburger = buttonRef.current
+        ? buttonRef.current.contains(targetNode)
+        : false;
 
       if (clickedOutsideMenu && !clickedHamburger) {
         setMenuOpen(false);
@@ -50,7 +54,10 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8 items-center">
-            <Link href="/our-people" className="font-figtree text-link font-medium">
+            <Link
+              href="/our-people"
+              className="font-figtree text-link font-medium"
+            >
               Our People
             </Link>
             <a
@@ -80,14 +87,52 @@ export default function Navbar() {
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? (
-              <svg width="34" height="34" fill="none" viewBox="0 0 34 34" stroke="#888">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M8 10l18 18M8 28L26 10" />
+              <svg
+                width="34"
+                height="34"
+                fill="none"
+                viewBox="0 0 34 34"
+                stroke="#888"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2.2}
+                  d="M8 10l18 18M8 28L26 10"
+                />
               </svg>
             ) : (
-              <svg width="34" height="34" fill="none" viewBox="0 0 34 34" stroke="#888">
-                <line x1="8" y1="11" x2="26" y2="11" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="8" y1="17" x2="26" y2="17" strokeWidth="2.2" strokeLinecap="round" />
-                <line x1="8" y1="23" x2="26" y2="23" strokeWidth="2.2" strokeLinecap="round" />
+              <svg
+                width="34"
+                height="34"
+                fill="none"
+                viewBox="0 0 34 34"
+                stroke="#888"
+              >
+                <line
+                  x1="8"
+                  y1="11"
+                  x2="26"
+                  y2="11"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+                <line
+                  x1="8"
+                  y1="17"
+                  x2="26"
+                  y2="17"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+                <line
+                  x1="8"
+                  y1="23"
+                  x2="26"
+                  y2="23"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
               </svg>
             )}
           </button>

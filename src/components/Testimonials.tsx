@@ -91,7 +91,12 @@ export default function Testimonials() {
           onClick={handlePrev}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
-          <Image src="/illustrations/arrowleft.svg" alt="Previous" width={24} height={24} />
+          <Image
+            src="/illustrations/arrowleft.svg"
+            alt="Previous"
+            width={24}
+            height={24}
+          />
         </button>
 
         {/* Cards with directional slide + fade */}
@@ -116,7 +121,10 @@ export default function Testimonials() {
                 <div className="font-figtree text-[18px] font-bold text-[#171717]">
                   {t.name}
                   {t.company && (
-                    <span className="text-[#888] font-normal"> — {t.company}</span>
+                    <span className="text-[#888] font-normal">
+                      {" "}
+                      — {t.company}
+                    </span>
                   )}
                 </div>
               </motion.div>
@@ -130,7 +138,12 @@ export default function Testimonials() {
           onClick={handleNext}
           className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
-          <Image src="/illustrations/arrowright.svg" alt="Next" width={24} height={24} />
+          <Image
+            src="/illustrations/arrowright.svg"
+            alt="Next"
+            width={24}
+            height={24}
+          />
         </button>
       </div>
 

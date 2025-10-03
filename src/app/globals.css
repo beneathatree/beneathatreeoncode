@@ -1,6 +1,6 @@
 /* 1️⃣ Import Google Fonts at the very top */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap");
 
 /* 2️⃣ Then Tailwind import */
 @import "tailwindcss";
@@ -11,9 +11,9 @@
   --foreground: #171717;
   --link-color: #888888; /* default link color */
   --link-hover: #000000; /* link hover color */
-  --font-sans: 'Arial', 'Helvetica', sans-serif;
-  --font-figtree: 'Figtree', sans-serif;
-  --font-playfair: 'Playfair Display', serif;
+  --font-sans: "Arial", "Helvetica", sans-serif;
+  --font-figtree: "Figtree", sans-serif;
+  --font-playfair: "Playfair Display", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,7 +30,8 @@ body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -60,6 +61,7 @@ body {
   color: var(--link-hover);
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }

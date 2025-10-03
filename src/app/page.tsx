@@ -8,7 +8,10 @@ import Testimonials from "../components/Testimonials";
 export default function HomePage() {
   useEffect(() => {
     const handleScroll = () => {
-      document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
+      document.documentElement.style.setProperty(
+        "--scroll-y",
+        `${window.scrollY}px`
+      );
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -43,9 +46,11 @@ export default function HomePage() {
             </h1>
 
             <div className="mt-5 max-w-4xl text-center text-base sm:text-lg md:text-xl font-figtree font-medium text-white leading-relaxed">
-              Transform your expertise into thoughtful products, built with love and precision.
+              Transform your expertise into thoughtful products, built with love
+              and precision.
               <br />
-              It doesn&apos;t matter whether you&apos;re a solopreneur, startup or enterprise.
+              It doesn&apos;t matter whether you&apos;re a solopreneur, startup
+              or enterprise.
             </div>
 
             <div className="font-figtree font-bold mt-6 text-base sm:text-lg md:text-xl text-white">
@@ -86,7 +91,10 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto">
             <div
               className="w-full max-w-[480px] rounded-2xl shadow-xl p-0"
-              style={{ background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)" }}
+              style={{
+                background:
+                  "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
+              }}
             >
               <Image
                 src="/illustrations/early.svg"
@@ -98,11 +106,13 @@ export default function HomePage() {
             </div>
             <div className="max-w-[480px] text-left">
               <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
-                Early-stage startups<br />
+                Early-stage startups
+                <br />
                 and Solopreneurs
               </h2>
               <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                We&apos;ll build a lean MVP to help you reach the market.<br />
+                We&apos;ll build a lean MVP to help you reach the market.
+                <br />
                 Once validated, we&apos;ll make sure your product grows -<br />
                 while being secure, scalable, and reliable.
               </p>
@@ -125,8 +135,8 @@ export default function HomePage() {
                 Funded startups
               </h2>
               <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                Already have engineers? We&apos;ll complement your team on specific projects,
-                freeing them to focus on what they do best.
+                Already have engineers? We&apos;ll complement your team on
+                specific projects, freeing them to focus on what they do best.
               </p>
             </div>
           </div>
@@ -144,12 +154,15 @@ export default function HomePage() {
             </div>
             <div className="max-w-[480px] text-left">
               <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
-                Established businesses<br />
+                Established businesses
+                <br />
                 and Enterprises
               </h2>
               <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                Have an idea to boost efficiency or disrupt your industry?<br />
-                We&apos;ll craft a lean, lovable product and smoothly transition it to your team.
+                Have an idea to boost efficiency or disrupt your industry?
+                <br />
+                We&apos;ll craft a lean, lovable product and smoothly transition
+                it to your team.
               </p>
             </div>
           </div>
