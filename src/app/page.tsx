@@ -1,11 +1,9 @@
 "use client";
-
 import { useEffect } from "react";
 import Image from "next/image";
 import ContactCta from "../components/ContactCta";
 import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
-import CallToAction from "@/components/CallToAction";
 
 export default function HomePage() {
   useEffect(() => {
@@ -18,9 +16,9 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Gradient wrapper for Hero + Cards */}
+      {/* Gradient wrapper only for Hero + Cards */}
       <div
-        className="w-full h-full min-h-full overflow-x-hidden"
+        className="w-full overflow-x-hidden bg-white"
         style={{
           background:
             "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 40%, #fdfdfd 60%, #ffffff 100%)",
@@ -31,43 +29,34 @@ export default function HomePage() {
       >
         {/* Hero Section */}
         <section className="relative text-white overflow-hidden pt-12 pb-40 sm:pb-60 md:pb-96">
-          <div className="relative z-30 max-w-screen-2xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-16 md:pt-20 flex flex-col items-center">
+          <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
             <h1 className="text-center">
-              <span
-                className="block font-playfair font-semibold italic text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[86px] mb-2"
-                style={{ letterSpacing: "-2px", lineHeight: "1.1em" }}
-              >
+              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-tight tracking-tight">
                 Bespoke
               </span>
-              <span
-                className="block lg:inline font-figtree font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[78px]"
-                style={{ letterSpacing: "-2px" }}
-              >
+              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-tight">
                 Software
               </span>
-              <span
-                className="block lg:inline font-figtree font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[78px] mt-1 ml-0 lg:ml-4"
-                style={{ letterSpacing: "-2px" }}
-              >
+              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] mt-1 ml-0 lg:ml-4 tracking-tight">
                 Consultancy
               </span>
             </h1>
 
-            <div className="mt-5 max-w-4xl text-center text-lg sm:text-xl md:text-2xl font-figtree font-medium text-white">
+            <div className="mt-5 max-w-4xl text-center text-base sm:text-lg md:text-xl font-figtree font-medium text-white leading-relaxed">
               Transform your expertise into thoughtful products, built with love and precision.
               <br />
-              It doesn’t matter whether you’re a solopreneur, startup or enterprise.
+              It doesn&apos;t matter whether you&apos;re a solopreneur, startup or enterprise.
             </div>
 
-            <div className="font-figtree font-bold mt-6 text-lg sm:text-xl md:text-2xl text-white">
-              We’ll play the long game, with you.
+            <div className="font-figtree font-bold mt-6 text-base sm:text-lg md:text-xl text-white">
+              We&apos;ll play the long game, with you.
             </div>
 
             <a
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-block px-6 py-4 rounded-lg font-figtree font-semibold text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
+              className="mt-6 inline-block px-6 py-4 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
               style={{ backgroundColor: "#fff", color: "#3A8C70" }}
             >
               Schedule a Call
@@ -91,12 +80,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Cards Section */}
-        <section className="relative z-30 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24 space-y-24">
+        {/* Cards Section — Alternating Layout */}
+        <section className="relative z-30 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-24 space-y-24">
           {/* Row 1 */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-24 max-w-[1600px] mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto">
             <div
-              className="w-[480px] rounded-2xl shadow-xl p-0"
+              className="w-full max-w-[480px] rounded-2xl shadow-xl p-0"
               style={{ background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)" }}
             >
               <Image
@@ -108,23 +97,21 @@ export default function HomePage() {
               />
             </div>
             <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-5xl leading-tight text-[#171717] mb-4">
-                Early-stage startups<br />and Solopreneurs
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+                Early-stage startups<br />
+                and Solopreneurs
               </h2>
-              <p
-                className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
-                style={{ letterSpacing: "-0.4px" }}
-              >
-                We’ll build a lean MVP to help you reach the market.<br />
-                Once validated, we’ll make sure your product grows —<br />
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                We&apos;ll build a lean MVP to help you reach the market.<br />
+                Once validated, we&apos;ll make sure your product grows -<br />
                 while being secure, scalable, and reliable.
               </p>
             </div>
           </div>
 
           {/* Row 2 */}
-          <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-24 max-w-[1600px] mx-auto">
-            <div className="w-[480px] rounded-2xl shadow-xl bg-white">
+          <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 max-w-screen-xl mx-auto">
+            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
               <Image
                 src="/illustrations/funded.svg"
                 alt="Funded startups illustration"
@@ -134,23 +121,19 @@ export default function HomePage() {
               />
             </div>
             <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-5xl leading-tight text-[#171717] mb-4">
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
                 Funded startups
               </h2>
-              <p
-                className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
-                style={{ letterSpacing: "-0.4px" }}
-              >
-                Already have engineers? We’ll complement your<br />
-                team on specific projects, freeing them to focus on<br />
-                what they do best.
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                Already have engineers? We&apos;ll complement your team on specific projects,
+                freeing them to focus on what they do best.
               </p>
             </div>
           </div>
 
           {/* Row 3 */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-24 max-w-[1600px] mx-auto">
-            <div className="w-[480px] rounded-2xl shadow-xl bg-white">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto">
+            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
               <Image
                 src="/illustrations/established.svg"
                 alt="Enterprise teams illustration"
@@ -160,27 +143,23 @@ export default function HomePage() {
               />
             </div>
             <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-5xl leading-tight text-[#171717] mb-4">
-                Established businesses<br />and Enterprises
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+                Established businesses<br />
+                and Enterprises
               </h2>
-              <p
-                className="font-figtree font-semibold text-xl leading-snug text-[#888888]"
-                style={{ letterSpacing: "-0.4px" }}
-              >
-                Have an idea to boost efficiency or disrupt your<br />
-                industry? We’ll craft a lean, lovable product and<br />
-                smoothly transition it to your team.
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                Have an idea to boost efficiency or disrupt your industry?<br />
+                We&apos;ll craft a lean, lovable product and smoothly transition it to your team.
               </p>
             </div>
           </div>
         </section>
       </div>
 
-      {/* Outside gradient */}
+      {/* New components outside gradient */}
       <ContactCta />
       <OurWork />
       <Testimonials />
-      <CallToAction />
     </>
   );
 }

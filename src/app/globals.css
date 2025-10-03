@@ -59,3 +59,7 @@ body {
 .text-link:hover {
   color: var(--link-hover);
 }
+
+html, body {
+  overflow-x: hidden;
+}
