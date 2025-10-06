@@ -31,10 +31,10 @@ export default function HomePage() {
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-12 pb-40 sm:pb-60 md:pb-96">
+        <section className="relative text-white overflow-hidden pt-12 pb-250 sm:pb-60 md:pb-96">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
             <h1 className="text-center mb-6">
-              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-[1.1em] tracking-[-3.8px]">Bespoke</span>
+              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mt-10 mb-2 leading-[1.1em] tracking-[-3.8px]">Bespoke</span>
               <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-[-3.8px]">Software</span>
               <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] mt-1 ml-0 lg:ml-4 tracking-[-3.8px]">Consultancy</span>
             </h1>
@@ -47,7 +47,7 @@ export default function HomePage() {
               or enterprise.
             </div>
 
-            <div className="font-figtree font-bold mt-6 text-[28px] text-white leading-[1.3em] tracking-[-0.7px]">
+            <div className="font-figtree font-bold mt-2 text-[28px] text-white leading-[1.3em] tracking-[-0.7px]">
               We&apos;ll play the long game, with you.
             </div>
 
@@ -55,7 +55,7 @@ export default function HomePage() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-block px-6 py-4 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
+              className="mt-6 inline-block px-6 py-4 mt-5 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
               style={{ backgroundColor: "#fff", color: "#3A8C70" }}
             >
               Schedule a Call
@@ -64,7 +64,7 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 left-0 w-full z-0 overflow-hidden"
+            className="absolute bottom-[-0px] left-0 w-full z-0 overflow-visible"
             style={{
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
               transition: "transform 0.2s ease-out",
