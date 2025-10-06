@@ -34,9 +34,8 @@ export default function HomePage() {
         <section className="relative text-white overflow-hidden pt-12 pb-40 sm:pb-60 md:pb-96">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
             <h1 className="text-center">
-              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-tight tracking-tight">
-                Bespoke
-              </span>
+            <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-tight tracking-[-3.8px]">
+              Bespoke</span>
               <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-tight">
                 Software
               </span>
