@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 
+// ----------------------------------------------------------------------
 type SocialPlatform = "instagram" | "linkedin" | "github" | "behance" | "web";
 
 type SocialLink = {
@@ -30,9 +33,7 @@ const people: Person[] = [
     name: "Adhyayan",
     role: "Software Engineer Dev",
     img: "/people/adhyayan.jpg",
-    socials: [
-      { platform: "github", url: "https://github.com/Adhyayanpradhan" },
-    ],
+    socials: [{ platform: "github", url: "https://github.com/Adhyayanpradhan" }],
   },
   {
     name: "Adil",
@@ -59,10 +60,7 @@ const people: Person[] = [
     role: "Co-founder",
     img: "/people/anil.jpg",
     socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/anil-nair-43880a3a/",
-      },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/anil-nair-43880a3a/" },
     ],
   },
   {
@@ -70,14 +68,8 @@ const people: Person[] = [
     role: "Designer / Photographer",
     img: "/people/bijoy.jpg",
     socials: [
-      {
-        platform: "instagram",
-        url: "https://www.instagram.com/vampirethoran/",
-      },
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/vampirethoran/",
-      },
+      { platform: "instagram", url: "https://www.instagram.com/vampirethoran/" },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/vampirethoran/" },
       { platform: "behance", url: "https://www.behance.net/vampirethoran" },
     ],
   },
@@ -85,22 +77,14 @@ const people: Person[] = [
     name: "Girish",
     role: "Co-Founder",
     img: "/people/girish.jpg",
-    socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/girish-pallagatti/",
-      },
-    ],
+    socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/girish-pallagatti/" }],
   },
   {
     name: "Hashim",
     role: "Full-Stack Developer",
     img: "/people/hashim.jpg",
     socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/hashim-full-stack-developer/",
-      },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/hashim-full-stack-developer/" },
       { platform: "github", url: "https://github.com/hashme7" },
     ],
   },
@@ -122,10 +106,7 @@ const people: Person[] = [
     img: "/people/rishi.jpg",
     socials: [
       { platform: "instagram", url: "https://www.instagram.com/ris__hi_/" },
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/rishi-releesh-42892a206",
-      },
+      { platform: "linkedin", url: "https://www.linkedin.com/in/rishi-releesh-42892a206" },
       { platform: "github", url: "https://github.com/rishi-beneathatree" },
     ],
   },
@@ -133,47 +114,26 @@ const people: Person[] = [
     name: "Rohit",
     role: "Co-Founder",
     img: "/people/rohit.jpg",
-    socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/rohitshetty00/",
-      },
-    ],
+    socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/rohitshetty00/" }],
   },
   {
     name: "Sachin",
     role: "Co-Founder",
     img: "/people/sachin.jpg",
-    socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/sachin-phatak/",
-      },
-    ],
+    socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/sachin-phatak/" }],
   },
   { name: "Sagar", role: "Operations Manager", img: "/people/sagar.jpg" },
-  {
-    name: "Shabeera",
-    role: "Full-Stack Develeper",
-    img: "/people/shabeera.jpg",
-  },
+  { name: "Shabeera", role: "Full-Stack Develeper", img: "/people/shabeera.jpg" },
   {
     name: "Sharikh",
     role: "Full-Stack Developer",
     img: "/people/sharikh.jpg",
     socials: [
-      {
-        platform: "instagram",
-        url: "https://www.instagram.com/sharikhahmed17/",
-      },
+      { platform: "instagram", url: "https://www.instagram.com/sharikhahmed17/" },
       { platform: "github", url: "https://github.com/sharikhBat" },
     ],
   },
-  {
-    name: "Shashank",
-    role: "Full-Stack Developer",
-    img: "/people/shashank.jpg",
-  },
+  { name: "Shashank", role: "Full-Stack Developer", img: "/people/shashank.jpg" },
   {
     name: "Sumit",
     role: "Full-Stack Developer",
@@ -188,12 +148,7 @@ const people: Person[] = [
     name: "Srinidhi",
     role: "Co-Founder",
     img: "/people/srinidhi.jpg",
-    socials: [
-      {
-        platform: "linkedin",
-        url: "https://www.linkedin.com/in/srinidhiprahlad/",
-      },
-    ],
+    socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/srinidhiprahlad/" }],
   },
   {
     name: "Tasavour",
@@ -210,24 +165,25 @@ const people: Person[] = [
     name: "Vijay",
     role: "Cook and Caretaker",
     img: "/people/vijay.jpg",
-    socials: [
-      {
-        platform: "instagram",
-        url: "https://www.instagram.com/vijayraikwar124/",
-      },
-    ],
+    socials: [{ platform: "instagram", url: "https://www.instagram.com/vijayraikwar124/" }],
   },
   { name: "Yaana", role: "Office Administrator", img: "/people/yaana.jpg" },
 ];
+// ----------------------------------------------------------------------
 
 export default function OurPeople() {
-  // sort alphabetically by name
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const t = requestAnimationFrame(() => setIsLoaded(true));
+    return () => cancelAnimationFrame(t);
+  }, []);
+
   const sorted = React.useMemo(
     () => [...people].sort((a, b) => a.name.localeCompare(b.name)),
     []
   );
 
-  // map platform to icon path
   const iconMap: Record<SocialPlatform, string> = {
     instagram: "/icons/instagram.svg",
     linkedin: "/icons/linkedin.svg",
@@ -242,14 +198,23 @@ export default function OurPeople() {
         <h1 className="font-figtree font-bold text-[50px] text-black text-center tracking-tight mt-12 mb-12">
           Our People
         </h1>
+
         <div className="grid md:grid-cols-3 gap-8 justify-center">
           {sorted.map((person, idx) => (
             <div
-              key={idx}
-              className="overflow-hidden rounded-lg shadow-sm transition-transform duration-300 ease-out hover:shadow-lg hover:-translate-y-1 hover:scale-[1.015] hover:ring-1 hover:ring-[#D0EAE2]"
-              style={{ width: 328, height: 420 }}
+              key={person.name + idx}
+              className={`overflow-hidden rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.015] hover:ring-1 hover:ring-[#D0EAE2]
+                transform-gpu
+                ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+              style={{
+                width: 328,
+                height: 420,
+                transitionProperty: "opacity, transform",
+                transitionDuration: "700ms",
+                transitionTimingFunction: "cubic-bezier(.22,.9,.29,1)",
+                transitionDelay: `${idx * 70}ms`,
+              }}
             >
-              {/* Image */}
               <div style={{ height: 265 }}>
                 <img
                   src={person.img}
@@ -258,7 +223,6 @@ export default function OurPeople() {
                 />
               </div>
 
-              {/* Content */}
               <div
                 className="flex flex-col justify-between items-start px-6 pt-4 pb-4 bg-white rounded-b-lg"
                 style={{ height: 155 }}
@@ -272,7 +236,6 @@ export default function OurPeople() {
                   </p>
                 </div>
 
-                {/* Social Icons */}
                 {person.socials && (
                   <div className="flex gap-3 mt-4">
                     {person.socials.map((link, i) => (
