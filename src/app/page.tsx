@@ -4,11 +4,9 @@ import Image from "next/image";
 import ContactCta from "../components/ContactCta";
 import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
-// 💡 IMPORTANT: Make sure this component exists and you have installed react-intersection-observer
-import AnimatedCardRow from "../components/AnimatedCardRow";
 
 export default function HomePage() {
-  // --- Effect for Parallax Scroll Variable (Hero Illustration) ---
+  // --- Effect for Parallax Scroll Variable (Kept for Hero Illustration) ---
   useEffect(() => {
     const handleScroll = () => {
       document.documentElement.style.setProperty(
@@ -84,92 +82,94 @@ export default function HomePage() {
 
         {/* Cards Section — Alternating Layout */}
         <section className="relative z-30 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-24 space-y-24">
-          
-          {/* Row 1 - Wrapped for Animation */}
-          <AnimatedCardRow id="row1" delay={0}>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto">
-              <div
-                className="w-full max-w-[480px] rounded-2xl shadow-xl p-0"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
-                }}
-              >
-                <Image
-                  src="/illustrations/early.svg"
-                  alt="Early stage startups illustration"
-                  width={480}
-                  height={300}
-                  className="rounded-2xl object-contain w-full h-auto"
-                />
-              </div>
-              <div className="max-w-[480px] text-left">
-                <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
-                  Early-stage startups
-                  <br />
-                  and Solopreneurs
-                </h2>
-                <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                  We&apos;ll build a lean MVP to help you reach the market.
-                  <br />
-                  Once validated, we&apos;ll make sure your product grows -<br />
-                  while being secure, scalable, and reliable.
-                </p>
-              </div>
+          {/* Row 1 */}
+          <div
+            id="row1"
+            className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto"
+          >
+            <div
+              className="w-full max-w-[480px] rounded-2xl shadow-xl p-0"
+              style={{
+                background:
+                  "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
+              }}
+            >
+              <Image
+                src="/illustrations/early.svg"
+                alt="Early stage startups illustration"
+                width={480}
+                height={300}
+                className="rounded-2xl object-contain w-full h-auto"
+              />
             </div>
-          </AnimatedCardRow>
+            <div className="max-w-[480px] text-left">
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+                Early-stage startups
+                <br />
+                and Solopreneurs
+              </h2>
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                We&apos;ll build a lean MVP to help you reach the market.
+                <br />
+                Once validated, we&apos;ll make sure your product grows -<br />
+                while being secure, scalable, and reliable.
+              </p>
+            </div>
+          </div>
 
-          {/* Row 2 - Wrapped for Animation with 200ms delay */}
-          <AnimatedCardRow id="row2" delay={200}>
-            <div className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 max-w-screen-xl mx-auto">
-              <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
-                <Image
-                  src="/illustrations/funded.svg"
-                  alt="Funded startups illustration"
-                  width={480}
-                  height={300}
-                  className="rounded-2xl object-contain w-full h-auto"
-                />
-              </div>
-              <div className="max-w-[480px] text-left">
-                <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
-                  Funded startups
-                </h2>
-                <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                  Already have engineers? We&apos;ll complement your team on
-                  specific projects, freeing them to focus on what they do best.
-                </p>
-              </div>
+          {/* Row 2 */}
+          <div
+            id="row2"
+            className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 max-w-screen-xl mx-auto"
+          >
+            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
+              <Image
+                src="/illustrations/funded.svg"
+                alt="Funded startups illustration"
+                width={480}
+                height={300}
+                className="rounded-2xl object-contain w-full h-auto"
+              />
             </div>
-          </AnimatedCardRow>
+            <div className="max-w-[480px] text-left">
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+                Funded startups
+              </h2>
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                Already have engineers? We&apos;ll complement your team on
+                specific projects, freeing them to focus on what they do best.
+              </p>
+            </div>
+          </div>
 
-          {/* Row 3 - Wrapped for Animation with 400ms delay */}
-          <AnimatedCardRow id="row3" delay={400}>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto">
-              <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
-                <Image
-                  src="/illustrations/established.svg"
-                  alt="Enterprise teams illustration"
-                  width={480}
-                  height={300}
-                  className="rounded-2xl object-contain w-full h-auto"
-                />
-              </div>
-              <div className="max-w-[480px] text-left">
-                <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
-                  Established businesses
-                  <br />
-                  and Enterprises
-                </h2>
-                <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
-                  Have an idea to boost efficiency or disrupt your industry?
-                  <br />
-                  We&apos;ll craft a lean, lovable product and smoothly transition
-                  it to your team.
-                </p>
-              </div>
+          {/* Row 3 */}
+          <div
+            id="row3"
+            className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto"
+          >
+            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
+              <Image
+                src="/illustrations/established.svg"
+                alt="Enterprise teams illustration"
+                width={480}
+                height={300}
+                className="rounded-2xl object-contain w-full h-auto"
+              />
             </div>
-          </AnimatedCardRow>
+            <div className="max-w-[480px] text-left">
+              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+                Established businesses
+                <br />
+                and Enterprises
+              </h2>
+              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+                Have an idea to boost efficiency or disrupt your industry?
+                <br />
+                We&apos;ll craft a lean, lovable product and smoothly transition
+                it to your team.
+              </p>
+            </div>
+          </div>
         </section>
       </div>
 
