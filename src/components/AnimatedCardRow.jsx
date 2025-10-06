@@ -3,27 +3,25 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-/**
- * Wraps a card row to apply a fade-in and slide-up animation when it enters the viewport.
- * * @param {object} props
- * @param {number} props.delay - Delay in milliseconds (e.g., 200, 400) for staggered effects.
- * @param {React.ReactNode} props.children - The content to animate (your card row div).
- */
 export default function AnimatedCardRow({ children, delay = 0, id }) {
+  // 1. Hook to track if element is visible
   const [ref, inView] = useInView({
-    triggerOnce: true,     // Only animate once
-    threshold: 0.1,        // Trigger when 10% of the element is visible
-    rootMargin: '-50px 0px', // Start a little early
+    triggerOnce: true,     // Only animate the first time it comes into view
+    threshold: 0.1,        // Start animation when 10% of element is visible
+    rootMargin: '0px 0px -50px 0px', // Trigger a bit earlier (50px from bottom)
   });
 
-  // Dynamically create the Tailwind delay class
-  const delayClass = delay > 0 ? `delay-${delay}` : '';
+  // 2. Dynamically create the Tailwind delay class
+  const delayClass = delay > 0 ? `delay-[${delay}ms]` : ''; 
+  // NOTE: Use [] syntax for arbitrary values like 'delay-[200ms]' if you haven't configured them in tailwind.config.js
 
-  // Animation classes
+  // 3. Define the animation based on the 'inView' state
   const animationClasses = `
     transition-all duration-1000 ease-out
     ${delayClass}
-    ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}
+    ${inView 
+        ? 'opacity-100 translate-y-0' 
+        : 'opacity-0 translate-y-12'}
   `;
 
   return (
