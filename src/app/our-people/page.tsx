@@ -133,7 +133,7 @@ const people: Person[] = [
       { platform: "github", url: "https://github.com/sharikhBat" },
     ],
   },
-  { name: "Shashank", role: "Full-Stack Developer", img: "/people/shashank.jpg" },
+  { name: "Shashank", role: "Co-Founder", img: "/people/shashank.jpg" },
   {
     name: "Sumit",
     role: "Full-Stack Developer",
