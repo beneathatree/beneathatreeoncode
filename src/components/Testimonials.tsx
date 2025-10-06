@@ -101,7 +101,7 @@ export default function Testimonials() {
 
         {/* Cards with directional slide + fade */}
         <div
-          className="flex gap-4 justify-center items-center overflow-hidden"
+          className="flex gap-4 justify-center items-center overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
