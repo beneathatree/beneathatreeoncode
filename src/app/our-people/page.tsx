@@ -41,7 +41,7 @@ const people: Person[] = [
     socials: [
       { platform: "instagram", url: "https://www.instagram.com/_adil_hamza/#" },
       { platform: "linkedin", url: "https://www.linkedin.com/in/adilhamza12" },
-      { platform: "behance", url: "https://www.instagram.com/mr__aman044/#" },
+      { platform: "behance", url: "https://www.behance.net/adilhamza1" },
     ],
   },
   {

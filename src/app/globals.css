@@ -1,16 +1,19 @@
-/* 1️⃣ Import Google Fonts at the very top */
+/* 1️⃣ Imports at the very top */
 @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap");
 
-/* 2️⃣ Then Tailwind import */
+/* 2️⃣ Tailwind import */
 @import "tailwindcss";
 
-/* Root variables */
+/* --- Root Variables and Theme --- */
 :root {
+  /* Colors */
   --background: #ffffff;
   --foreground: #171717;
   --link-color: #888888; /* default link color */
   --link-hover: #000000; /* link hover color */
+
+  /* Fonts */
   --font-sans: "Arial", "Helvetica", sans-serif;
   --font-figtree: "Figtree", sans-serif;
   --font-playfair: "Playfair Display", serif;
@@ -23,12 +26,19 @@
   }
 }
 
+/* --- Base Body Styles --- */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
 }
 
+html,
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* --- Custom Animations --- */
 @keyframes float {
   0%,
   100% {
@@ -43,7 +53,9 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Utility classes */
+/* --- Utility Classes --- */
+
+/* Font Utilities (for Tailwind) */
 .font-figtree {
   font-family: var(--font-figtree);
 }
@@ -52,6 +64,7 @@ body {
   font-family: var(--font-playfair);
 }
 
+/* Link Hover Effect */
 .text-link {
   color: var(--link-color);
   transition: color 0.2s ease-in-out;
@@ -59,9 +72,4 @@ body {
 
 .text-link:hover {
   color: var(--link-hover);
-}
-
-html,
-body {
-  overflow-x: hidden;
 }
