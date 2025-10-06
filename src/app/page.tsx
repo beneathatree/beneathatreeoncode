@@ -34,14 +34,9 @@ export default function HomePage() {
         <section className="relative text-white overflow-hidden pt-12 pb-40 sm:pb-60 md:pb-96">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
             <h1 className="text-center">
-            <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-tight tracking-[-3.8px]">
-              Bespoke</span>
-              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-tight">
-                Software
-              </span>
-              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] mt-1 ml-0 lg:ml-4 tracking-tight">
-                Consultancy
-              </span>
+              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] mb-2 leading-[1.1em] tracking-[-3.8px]">Bespoke</span>
+              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-[-3.8px]">Software</span>
+              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] mt-1 ml-0 lg:ml-4 tracking-[-3.8px]">Consultancy</span>
             </h1>
 
             <div className="mt-5 max-w-4xl text-center text-base sm:text-lg md:text-xl font-figtree font-medium text-white leading-relaxed">
