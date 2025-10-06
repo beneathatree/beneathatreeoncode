@@ -5,27 +5,34 @@ export default function OurWork() {
         Our Work
       </h2>
 
-      <div className="flex flex-col gap-12 max-w-[1600px] mx-auto">
-        {/* Row 1 */}
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Uplift */}
+      {/* Main container to center content and limit max width */}
+      {/* Max-w-3xl is roughly 48rem or 768px, which fits the tight center column look */}
+      <div className="flex flex-col gap-8 max-w-3xl mx-auto">
+
+        {/* 1. Top Row: Uplift and Digifarm side-by-side */}
+        {/* We use flex-wrap to stack them on small screens and justify-center to group them */}
+        <div className="flex flex-wrap justify-center gap-8">
+          
+          {/* Uplift Card - Fixed width (or flex-1 to share space) */}
           <a
             href="https://www.uplift.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full md:w-[480px] flex flex-col items-start text-left gap-6 p-6 rounded-2xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+            // w-full on mobile, but flex-1 on medium/desktop to share space
+            className="w-full md:w-auto flex-1 min-w-[300px] flex flex-col items-start text-left gap-4 p-4 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
           >
-            <img
-              src="/illustrations/uplift.svg"
-              alt="Uplift Logo"
-              className="w-[220px] h-auto self-center"
-            />
-            <h3 className="font-figtree font-bold text-3xl text-[#171717] mb-2">
+            <div className="w-full h-24 flex items-center justify-center">
+              <img
+                src="/illustrations/uplift.svg"
+                alt="Uplift Logo"
+                className="w-[120px] h-auto"
+              />
+            </div>
+            <h3 className="font-figtree font-bold text-xl text-[#171717] mt-4">
               Uplift
             </h3>
             <p
-              className="font-figtree font-medium text-xl leading-snug text-[#888888]"
-              style={{ letterSpacing: "-0.4px" }}
+              className="font-figtree font-medium text-sm leading-snug text-[#888888]"
             >
               Optimizing human movement & performance
               <br />
@@ -33,24 +40,26 @@ export default function OurWork() {
             </p>
           </a>
 
-          {/* DigiFarm */}
+          {/* DigiFarm Card - Fixed width (or flex-1 to share space) */}
           <a
             href="https://digifarm.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-2xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+            // w-full on mobile, but flex-1 on medium/desktop to share space
+            className="w-full md:w-auto flex-1 min-w-[300px] flex flex-col items-start text-left gap-4 p-4 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
           >
-            <img
-              src="/illustrations/digifarm.svg"
-              alt="DigiFarm Logo"
-              className="w-[220px] h-auto self-center"
-            />
-            <h3 className="font-figtree font-bold text-3xl text-[#171717] mb-2">
+            <div className="w-full h-24 flex items-center justify-center">
+              <img
+                src="/illustrations/digifarm.svg"
+                alt="DigiFarm Logo"
+                className="w-[120px] h-auto"
+              />
+            </div>
+            <h3 className="font-figtree font-bold text-xl text-[#171717] mt-4">
               DigiFarm
             </h3>
             <p
-              className="font-figtree font-medium text-xl leading-snug text-[#888888]"
-              style={{ letterSpacing: "-0.4px" }}
+              className="font-figtree font-medium text-sm leading-snug text-[#888888]"
             >
               Develop deep neural network models and agtech solutions for
               accurately detecting
@@ -60,24 +69,26 @@ export default function OurWork() {
           </a>
         </div>
 
-        {/* Row 2 */}
+        {/* 2. Bottom Row: Speak2 (full width under the two cards) */}
         <a
           href="https://www.speak2family.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex flex-col items-start text-left gap-6 p-6 rounded-2xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+          // This card takes w-full of the max-w-3xl parent container
+          className="w-full flex flex-col items-start text-left gap-4 p-4 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
         >
-          <img
-            src="/illustrations/speak2.svg"
-            alt="Speak2 Logo"
-            className="w-[220px] h-auto self-center"
-          />
-          <h3 className="font-figtree font-bold text-3xl text-[#171717] mb-2">
+          <div className="w-full h-24 flex items-center justify-center">
+            <img
+              src="/illustrations/speak2.svg"
+              alt="Speak2 Logo"
+              className="w-[120px] h-auto"
+            />
+          </div>
+          <h3 className="font-figtree font-bold text-xl text-[#171717] mt-4">
             Speak2
           </h3>
           <p
-            className="font-figtree font-medium text-xl leading-snug text-[#888888]"
-            style={{ letterSpacing: "-0.4px" }}
+            className="font-figtree font-medium text-sm leading-snug text-[#888888]"
           >
             Revolutionize senior living.
           </p>
