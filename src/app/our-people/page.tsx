@@ -31,7 +31,7 @@ const people: Person[] = [
   },
   {
     name: "Adhyayan",
-    role: "Software Engineer Dev",
+    role: "Software Engineer / Dev",
     img: "/people/adhyayan.jpg",
     socials: [{ platform: "github", url: "https://github.com/Adhyayanpradhan" }],
   },
