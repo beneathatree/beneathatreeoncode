@@ -106,6 +106,7 @@ const people: Person[] = [
   },
   { name: "Hrithin", role: "Full-Stack Developer", img: "/people/hrithin.jpg" },
   { name: "Orange", role: "Office Cat", img: "/people/orange.jpg" },
+  { name: "Rukmani", role: "Cook and Caretaker", img: "/people/rukmani.jpg" },
   {
     name: "Rishabh",
     role: "Full-Stack Developer",
