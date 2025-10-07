@@ -34,8 +34,8 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative text-white overflow-hidden pt-[120px] sm:pt-[140px] md:pt-[160px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
-            <h1 className="text-center mb-4 px-4 sm:px-6 md:px-8">
-              {/* Mobile stacked layout */}
+            <h1 className="text-center mb-6 px-4 sm:px-6 md:px-8">
+              {/* Mobile layout */}
               <span className="block sm:hidden">
                 <span className="block font-playfair font-semibold italic text-[48px] leading-[1em] tracking-[-3.8px] text-center">
                   Bespoke
@@ -48,26 +48,30 @@ export default function HomePage() {
                 </span>
               </span>
 
-              {/* Larger screens inline layout */}
-              <span className="hidden sm:inline">
-                <span className="font-playfair font-semibold italic text-[64px] sm:text-[76px] md:text-[86px] xl:text-[96px] leading-[1.1em] tracking-[-3.8px]">
+              {/* Larger screens — forced line breaks */}
+              <span className="hidden sm:block">
+                <div className="font-playfair font-semibold italic text-[76px] md:text-[86px] xl:text-[96px] leading-[0.6em] tracking-[-3.8px] text-center">
                   Bespoke
-                </span>
-                <span className="font-figtree font-extrabold text-[48px] sm:text-[60px] md:text-[72px] xl:text-[84px] tracking-[-3.8px] ml-4">
+                </div>
+                <div className="font-figtree font-extrabold text-[60px] md:text-[72px] xl:text-[84px] tracking-[-3.8px] text-center mt-2">
                   Software Consultancy
-                </span>
+                </div>
               </span>
             </h1>
 
-            <div className="mt-2 max-w-[90%] sm:max-w-2xl mx-auto text-center text-[20px] sm:text-[24px] font-figtree font-medium text-white leading-[1.4em] tracking-[-0.5px]">
-              Transform your expertise into thoughtful products, built with love and precision.
-              <br />
-              It doesn't matter whether you're a solopreneur, startup or enterprise.
+            {/* Supporting Sentences — each on its own line */}
+            <div className="mt-4 max-w-[1000px] mx-auto text-center text-[22px] sm:text-[26px] md:text-[28px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px]">
+              <p className="mb-2">
+                Transform your expertise into thoughtful products, built with love and precision.
+              </p>
+              <p className="mb-4">
+                It doesn't matter whether you're a solopreneur, startup or enterprise.
+              </p>
+              <p className="font-bold">
+                We'll play the long game, with you.
+              </p>
             </div>
 
-            <div className="mt-3 text-center font-figtree font-bold text-[20px] sm:text-[24px] text-white leading-[1.4em] tracking-[-0.5px]">
-              We'll play the long game, with you.
-            </div>
 
 
 
