@@ -7,10 +7,10 @@ export default function OurWork() {
 
       {/* Main container: max-w-4xl (approx 1024px) for alignment */}
       <div className="flex flex-col gap-10 max-w-4xl mx-auto">
-        
+
         {/* 1. Top Row: Uplift and Digifarm side-by-side with equal width */}
         <div className="flex flex-col md:flex-row justify-center gap-8">
-          
+
           {/* Uplift Card: Large Logo (w-[160px]) */}
           <a
             href="https://www.uplift.ai/"
@@ -49,7 +49,7 @@ export default function OurWork() {
                 src="/illustrations/digifarm.svg"
                 alt="DigiFarm Logo"
                 // 💡 Applied a smaller, explicit width to constrain the DigiFarm logo
-                className="w-[180px] h-auto" 
+                className="w-[180px] h-auto"
               />
             </div>
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">
@@ -59,9 +59,7 @@ export default function OurWork() {
               className="font-figtree font-medium text-base leading-snug text-[#888888]"
             >
               Develop deep neural network models and agtech solutions for
-              accurately detecting
-              <br />
-              field boundaries and seeded acres in precision farming.
+              accurately detecting field boundaries and seeded acres in precision farming.
             </p>
           </a>
         </div>
