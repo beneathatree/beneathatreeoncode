@@ -20,7 +20,7 @@ const testimonials = [
     name: "Shad Crini",
     company: "",
     quote:
-      "Very happy to work with Sachin and Beneath3ree. Very Professional. His time management is great, and his strength lies with his core dev. He shows a great responsibility, he goes beyond doing his role and making sure it is delivered in the best possible way.",
+      "Very happy to work with Sachin and BeneathAree. Very Professional. His time management is great, and his strength lies with his core dev. He shows a great responsibility, he goes beyond doing his role and making sure it is delivered in the best possible way.",
   },
   {
     name: "Kayla Ray",
