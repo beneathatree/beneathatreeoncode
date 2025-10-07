@@ -32,25 +32,44 @@ export default function HomePage() {
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-12 pb-[250px] sm:pb-[350px] md:pb-[400px]">
+        <section className="relative text-white overflow-hidden pt-[120px] sm:pt-[140px] md:pt-[160px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
-            <h1 className="text-center mb-10">
-              <span className="block font-playfair font-semibold italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] leading-[1.1em] tracking-[-3.8px]">Bespoke</span>
-              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] tracking-[-3.8px]">Software</span>
-              <span className="block lg:inline font-figtree font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[78px] mt-1 ml-0 lg:ml-4 tracking-[-3.8px]">Consultancy</span>
+            <h1 className="text-center mb-4 px-4 sm:px-6 md:px-8">
+              {/* Mobile stacked layout */}
+              <span className="block sm:hidden">
+                <span className="block font-playfair font-semibold italic text-[48px] leading-[1em] tracking-[-3.8px] text-center">
+                  Bespoke
+                </span>
+                <span className="block font-figtree font-extrabold text-[44px] leading-[1em] tracking-[-3.8px] text-center mt-2">
+                  Software
+                </span>
+                <span className="block font-figtree font-extrabold text-[44px] leading-[1em] tracking-[-3.8px] text-center mt-2">
+                  Consultancy
+                </span>
+              </span>
+
+              {/* Larger screens inline layout */}
+              <span className="hidden sm:inline">
+                <span className="font-playfair font-semibold italic text-[64px] sm:text-[76px] md:text-[86px] xl:text-[96px] leading-[1.1em] tracking-[-3.8px]">
+                  Bespoke
+                </span>
+                <span className="font-figtree font-extrabold text-[48px] sm:text-[60px] md:text-[72px] xl:text-[84px] tracking-[-3.8px] ml-4">
+                  Software Consultancy
+                </span>
+              </span>
             </h1>
 
-            <div className="mt-[35px] max-w-4xl text-center text-[24px] font-figtree font-medium text-white leading-[1.3em] tracking-[-0.7px]">
-              Transform your expertise into thoughtful products, built with love
-              and precision.
+            <div className="mt-2 max-w-[90%] sm:max-w-2xl mx-auto text-center text-[20px] sm:text-[24px] font-figtree font-medium text-white leading-[1.4em] tracking-[-0.5px]">
+              Transform your expertise into thoughtful products, built with love and precision.
               <br />
-              It doesn&apos;t matter whether you&apos;re a solopreneur, startup
-              or enterprise.
+              It doesn't matter whether you're a solopreneur, startup or enterprise.
             </div>
 
-            <div className="font-figtree font-bold mt-6 text-[24px] text-white leading-[1.3em] tracking-[-0.7px]">
-              We&apos;ll play the long game, with you.
+            <div className="mt-3 text-center font-figtree font-bold text-[20px] sm:text-[24px] text-white leading-[1.4em] tracking-[-0.5px]">
+              We'll play the long game, with you.
             </div>
+
+
 
             <a
               href="https://calendly.com/rohit-beneathatree/introduction"
