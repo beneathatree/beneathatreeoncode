@@ -12,7 +12,7 @@ const testimonials = [
   },
   {
     name: "Sean Petty",
-    company: "PettyLogic",
+    company: "PlateLogiq",
     quote:
       "The team was an absolute pleasure to work with. Incredible services developers! With a very locally defined scope and requirements, they went above and beyond to deliver. They were incredibly patient during a long and drawn out development cycle.",
   },
