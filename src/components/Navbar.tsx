@@ -33,9 +33,9 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 w-full z-50"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.97)",
-        backdropFilter: "blur(2px)",
-        WebkitBackdropFilter: "blur(2px)",
+        backgroundColor: "rgba(255, 255, 255, 0.80)",
+        backdropFilter: menuOpen ? "none" : "blur(5px)",
+        WebkitBackdropFilter: menuOpen ? "none" : "blur(80px)",
       }}
     >
       <div className="w-full px-6 py-4">
@@ -147,7 +147,7 @@ export default function Navbar() {
               animate={{ height: "auto", opacity: 1, y: 0 }}
               exit={{ height: 0, opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden border-none "
               style={{
                 backgroundColor: "transparent",
                 backdropFilter: "blur(2px)",
