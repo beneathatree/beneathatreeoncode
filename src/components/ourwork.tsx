@@ -1,7 +1,7 @@
 export default function OurWork() {
   return (
-    <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
-      <h2 className="text-5xl font-figtree font-bold text-[#171717] mb-16 text-center">
+    <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 pb-24">
+      <h2 className="text-4xl font-figtree font-bold text-[#171717] mb-16 text-center tracking-[-1px]">
         Our Work
       </h2>
 
@@ -11,7 +11,7 @@ export default function OurWork() {
         {/* 1. Top Row: Uplift and Digifarm side-by-side with equal width */}
         <div className="flex flex-col md:flex-row justify-center gap-8">
 
-          {/* Uplift Card: Large Logo (w-[160px]) */}
+          {/* Uplift Card */}
           <a
             href="https://www.uplift.ai/"
             target="_blank"
@@ -28,16 +28,14 @@ export default function OurWork() {
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">
               Uplift
             </h3>
-            <p
-              className="font-figtree font-medium text-base leading-snug text-[#888888]"
-            >
+            <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
               Optimizing human movement & performance
               <br />
               with AI-powered insights.
             </p>
           </a>
 
-          {/* DigiFarm Card: Reduced Logo Size */}
+          {/* DigiFarm Card */}
           <a
             href="https://digifarm.io/"
             target="_blank"
@@ -48,16 +46,13 @@ export default function OurWork() {
               <img
                 src="/illustrations/digifarm.svg"
                 alt="DigiFarm Logo"
-                // 💡 Applied a smaller, explicit width to constrain the DigiFarm logo
                 className="w-[180px] h-auto"
               />
             </div>
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">
               DigiFarm
             </h3>
-            <p
-              className="font-figtree font-medium text-base leading-snug text-[#888888]"
-            >
+            <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
               Develop deep neural network models and agtech solutions for
               accurately detecting field boundaries and seeded acres in precision farming.
             </p>
@@ -81,9 +76,7 @@ export default function OurWork() {
           <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">
             Speak2
           </h3>
-          <p
-            className="font-figtree font-medium text-base leading-snug text-[#888888]"
-          >
+          <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
             Revolutionize senior living.
           </p>
         </a>
