@@ -103,26 +103,27 @@ export default function HomePage() {
         {/* Cards Section — Alternating Layout */}
         <section
           className="
-            relative
-            text-white
-            overflow-hidden
-            pt-[40px] sm:pt-[60px] md:pt-[80px]
-            pb-[40px] sm:pb-[60px] md:pb-[80px]
-            space-y-16
-          "
+    relative
+    text-white
+    overflow-hidden
+    pt-[40px] sm:pt-[60px] md:pt-[80px]
+    pb-[40px] sm:pb-[60px] md:pb-[80px]
+    space-y-16
+    px-4        /* add horizontal gutter on mobile */
+  "
         >
           {/* Row 1 */}
           <div
             id="row1"
             className="
-              flex flex-col md:flex-row
-              items-center justify-center
-              gap-10
-              max-w-screen-xl mx-auto
-            "
+      flex flex-col md:flex-row
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
             <div
-              className="w-full max-w-[380px] rounded-2xl shadow-xl p-0"
+              className="w-full sm:max-w-[380px] rounded-2xl shadow-xl p-0"
               style={{
                 background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
               }}
@@ -136,16 +137,16 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[380px] text-left">
               <h2
                 className="
-                  font-figtree font-bold
-                  text-[42px]
-                  tracking-[-2.1px]
-                  leading-[1.2em]
-                  text-[#171717]
-                  mb-4
-                "
+          font-figtree font-bold
+          text-[42px]
+          tracking-[-2.1px]
+          leading-[1.2em]
+          text-[#171717]
+          mb-4
+        "
               >
                 Early-stage startups
                 <br />
@@ -153,12 +154,12 @@ export default function HomePage() {
               </h2>
               <p
                 className="
-                  font-figtree font-semibold
-                  text-[16px]
-                  tracking-[-0.7px]
-                  leading-[1.4em]
-                  text-[#888888]
-                "
+          font-figtree font-semibold
+          text-[16px]
+          tracking-[-0.7px]
+          leading-[1.4em]
+          text-[#888888]
+        "
               >
                 We&apos;ll build a lean MVP to help you reach the market.
                 <br />
@@ -173,13 +174,13 @@ export default function HomePage() {
           <div
             id="row2"
             className="
-              flex flex-col md:flex-row-reverse
-              items-center justify-center
-              gap-10
-              max-w-screen-xl mx-auto
-            "
+      flex flex-col md:flex-row-reverse
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
-            <div className="w-full max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
+            <div className="w-full sm:max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/funded.svg"
                 alt="Funded startups illustration"
@@ -189,27 +190,27 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[380px] text-left">
               <h2
                 className="
-                  font-figtree font-bold
-                  text-[42px]
-                  tracking-[-2.1px]
-                  leading-[1.2em]
-                  text-[#171717]
-                  mb-4
-                "
+          font-figtree font-bold
+          text-[42px]
+          tracking-[-2.1px]
+          leading-[1.2em]
+          text-[#171717]
+          mb-4
+        "
               >
                 Funded startups
               </h2>
               <p
                 className="
-                  font-figtree font-semibold
-                  text-[16px]
-                  tracking-[-0.7px]
-                  leading-[1.4em]
-                  text-[#888888]
-                "
+          font-figtree font-semibold
+          text-[16px]
+          tracking-[-0.7px]
+          leading-[1.4em]
+          text-[#888888]
+        "
               >
                 Already have engineers? We’ll complement your team on specific
                 projects, freeing them to focus on what they do best.
@@ -221,13 +222,13 @@ export default function HomePage() {
           <div
             id="row3"
             className="
-              flex flex-col md:flex-row
-              items-center justify-center
-              gap-10
-              max-w-screen-xl mx-auto
-            "
+      flex flex-col md:flex-row
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
-            <div className="w-full max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
+            <div className="w-full sm:max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/established.svg"
                 alt="Enterprise teams illustration"
@@ -237,16 +238,16 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[380px] text-left">
               <h2
                 className="
-                  font-figtree font-bold
-                  text-[42px]
-                  tracking-[-2.1px]
-                  leading-[1.2em]
-                  text-[#171717]
-                  mb-4
-                "
+          font-figtree font-bold
+          text-[42px]
+          tracking-[-2.1px]
+          leading-[1.2em]
+          text-[#171717]
+          mb-4
+        "
               >
                 Established businesses
                 <br />
@@ -254,12 +255,12 @@ export default function HomePage() {
               </h2>
               <p
                 className="
-                  font-figtree font-semibold
-                  text-[16px]
-                  tracking-[-0.7px]
-                  leading-[1.4em]
-                  text-[#888888]
-                "
+          font-figtree font-semibold
+          text-[16px]
+          tracking-[-0.7px]
+          leading-[1.4em]
+          text-[#888888]
+        "
               >
                 Have an idea to boost efficiency or disrupt your industry?
                 <br />
