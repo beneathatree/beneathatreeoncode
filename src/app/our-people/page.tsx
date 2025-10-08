@@ -193,21 +193,20 @@ export default function OurPeople() {
   };
 
   return (
-    <div className="bg-[#F4FAF9] min-h-screen px-6 py-16">
+    <div className="bg-[#F4FAF9] min-h-screen px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="font-figtree font-bold text-[50px] text-black text-center tracking-tight mt-12 mb-12">
+        <h1 className="font-figtree font-bold text-3xl sm:text-4xl lg:text-[50px] text-black text-center tracking-tight mt-8 sm:mt-12 mb-8 sm:mb-12">
           Our People
         </h1>
 
-        <div className="grid md:grid-cols-3 gap-8 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-center">
           {sorted.map((person, idx) => (
             <div
               key={person.name + idx}
               className={`overflow-hidden rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.015] hover:ring-1 hover:ring-[#D0EAE2]
-                transform-gpu
+                transform-gpu w-full max-w-sm mx-auto
                 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
               style={{
-                width: 328,
                 height: 420,
                 transitionProperty: "opacity, transform",
                 transitionDuration: "700ms",
@@ -224,14 +223,14 @@ export default function OurPeople() {
               </div>
 
               <div
-                className="flex flex-col justify-between items-start px-6 pt-4 pb-4 bg-white rounded-b-lg"
+                className="flex flex-col justify-between items-start px-4 sm:px-6 pt-4 pb-4 bg-white rounded-b-lg"
                 style={{ height: 155 }}
               >
                 <div>
-                  <h2 className="font-figtree font-semibold text-[40px] text-black leading-none tracking-tight">
+                  <h2 className="font-figtree font-semibold text-2xl sm:text-3xl lg:text-[40px] text-black leading-none tracking-tight">
                     {person.name}
                   </h2>
-                  <p className="font-figtree font-medium text-[17px] text-[#888888] mt-2 tracking-tight">
+                  <p className="font-figtree font-medium text-sm sm:text-base lg:text-[17px] text-[#888888] mt-2 tracking-tight">
                     {person.role}
                   </p>
                 </div>
