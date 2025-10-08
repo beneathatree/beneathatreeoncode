@@ -34,7 +34,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full z-50"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.90)",
-        backdropFilter: menuOpen ? "none" : "blur(80px)",
+        backdropFilter: menuOpen ? "none" : "blur(8px)",
         WebkitBackdropFilter: menuOpen ? "none" : "blur(80px)",
       }}
     >
