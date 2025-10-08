@@ -1,16 +1,16 @@
 export default function ContactCta() {
   return (
-    <section className="pt-8 sm:pt-10 md:pt-12 lg:pt-14 pb-20 sm:pb-28 bg-white text-center">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-8 pb-16 bg-white text-center">
+      <div className="max-w-4xl mx-auto px-4">
         {/* Main Heading/Text */}
         <h2
           className="
             font-figtree font-bold
-            text-3xl sm:text-4xl md:text-5xl lg:text-[50px]
-            tracking-[-2.1px]
+            text-3xl sm:text-4xl md:text-4xl
+            tracking-[-1px]
             leading-tight
             text-[#42A185]
-            mb-6 sm:mb-8 md:mb-10
+            mb-6
           "
         >
           Don&apos;t fit this bill? Contact us anyway.
@@ -25,11 +25,11 @@ export default function ContactCta() {
           rel="noreferrer"
           className="
             inline-block
-            px-6 py-2 sm:px-8 sm:py-3 md:px-10 md:py-4
+            px-6 py-2
             rounded-lg
             font-figtree font-semibold
             text-white
-            text-base sm:text-lg md:text-xl
+            text-base
             transition-transform duration-200 ease-in-out
             hover:scale-[1.03]
             shadow-md hover:shadow-lg
