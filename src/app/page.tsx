@@ -85,7 +85,7 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 sm:bottom-[30px] md:bottom-[50px] lg:bottom-[70px] xl:bottom-[90px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible"
+            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible"
             style={{
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
               transition: "transform 0.2s ease-out",
@@ -101,34 +101,46 @@ export default function HomePage() {
         </section>
 
         {/* Cards Section — Alternating Layout */}
-        <section className="relative z-30 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-24 space-y-24">
+        <section
+          className="
+    relative
+    text-white
+    overflow-hidden
+    pt-[40px] sm:pt-[60px] md:pt-[80px]
+    pb-[250px] sm:pb-[350px] md:pb-[400px] space-y-16
+  "
+        >
           {/* Row 1 */}
           <div
             id="row1"
-            className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto"
+            className="
+      flex flex-col md:flex-row
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
             <div
-              className="w-full max-w-[480px] rounded-2xl shadow-xl p-0"
+              className="w-full max-w-[380px] rounded-2xl shadow-xl p-0"
               style={{
-                background:
-                  "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
+                background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
               }}
             >
               <Image
                 src="/illustrations/early.svg"
                 alt="Early stage startups illustration"
-                width={480}
-                height={300}
+                width={380}
+                height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
-            <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+            <div className="max-w-[380px] text-left">
+              <h2 className="font-figtree font-bold text-xl sm:text-2xl md:text-3xl text-[#171717] mb-4 leading-tight tracking-tight">
                 Early-stage startups
                 <br />
                 and Solopreneurs
               </h2>
-              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+              <p className="font-figtree font-medium text-sm sm:text-base md:text-lg text-[#888888] leading-snug tracking-tight">
                 We&apos;ll build a lean MVP to help you reach the market.
                 <br />
                 Once validated, we&apos;ll make sure your product grows -<br />
@@ -140,22 +152,27 @@ export default function HomePage() {
           {/* Row 2 */}
           <div
             id="row2"
-            className="flex flex-col md:flex-row-reverse items-center justify-center gap-12 max-w-screen-xl mx-auto"
+            className="
+      flex flex-col md:flex-row-reverse
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
-            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
+            <div className="w-full max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/funded.svg"
                 alt="Funded startups illustration"
-                width={480}
-                height={300}
+                width={380}
+                height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
-            <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+            <div className="max-w-[380px] text-left">
+              <h2 className="font-figtree font-bold text-xl sm:text-2xl md:text-3xl text-[#171717] mb-4 leading-tight tracking-tight">
                 Funded startups
               </h2>
-              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+              <p className="font-figtree font-medium text-sm sm:text-base md:text-lg text-[#888888] leading-snug tracking-tight">
                 Already have engineers? We&apos;ll complement your team on
                 specific projects, freeing them to focus on what they do best.
               </p>
@@ -165,24 +182,29 @@ export default function HomePage() {
           {/* Row 3 */}
           <div
             id="row3"
-            className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-screen-xl mx-auto"
+            className="
+      flex flex-col md:flex-row
+      items-center justify-center
+      gap-10
+      max-w-screen-xl mx-auto
+    "
           >
-            <div className="w-full max-w-[480px] rounded-2xl shadow-xl bg-white">
+            <div className="w-full max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/established.svg"
                 alt="Enterprise teams illustration"
-                width={480}
-                height={300}
+                width={380}
+                height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
-            <div className="max-w-[480px] text-left">
-              <h2 className="font-figtree font-bold text-2xl sm:text-3xl md:text-4xl text-[#171717] mb-4 leading-tight tracking-tight">
+            <div className="max-w-[380px] text-left">
+              <h2 className="font-figtree font-bold text-xl sm:text-2xl md:text-3xl text-[#171717] mb-4 leading-tight tracking-tight">
                 Established businesses
                 <br />
                 and Enterprises
               </h2>
-              <p className="font-figtree font-medium text-base sm:text-lg md:text-xl text-[#888888] leading-snug tracking-tight">
+              <p className="font-figtree font-medium text-sm sm:text-base md:text-lg text-[#888888] leading-snug tracking-tight">
                 Have an idea to boost efficiency or disrupt your industry?
                 <br />
                 We&apos;ll craft a lean, lovable product and smoothly transition
@@ -191,6 +213,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
       </div>
 
       {/* New components outside gradient */}
