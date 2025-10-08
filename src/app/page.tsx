@@ -107,7 +107,7 @@ export default function HomePage() {
             text-white
             overflow-hidden
             pt-[40px] sm:pt-[60px] md:pt-[80px]
-            pb-[250px] sm:pb-[350px] md:pb-[400px]
+            pb-[40px] sm:pb-[60px] md:pb-[80px]
             space-y-16
           "
         >
