@@ -32,9 +32,9 @@ export default function HomePage() {
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-[120px] sm:pt-[140px] md:pt-[160px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
+        <section className="relative text-white overflow-hidden pt-[40px] sm:pt-[60px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
           <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
-            <h1 className="text-center mb-6 px-4 sm:px-6 md:px-8">
+            <h1 className="text-center mb-2 px-4 sm:px-6 md:px-8">
               {/* Mobile layout */}
               <span className="block sm:hidden">
                 <span className="block font-playfair font-semibold italic text-[48px] leading-[1em] tracking-[-3.8px] text-center">
@@ -50,10 +50,10 @@ export default function HomePage() {
 
               {/* Larger screens — forced line breaks */}
               <span className="hidden sm:block">
-                <div className="font-playfair font-semibold italic text-[76px] md:text-[86px] xl:text-[96px] leading-[0.6em] tracking-[-3.8px] text-center">
+                <div className="font-playfair font-semibold italic text-[60px] md:text-[70px] xl:text-[80px] leading-[0.6em] tracking-[-3.8px] text-center">
                   Bespoke
                 </div>
-                <div className="font-figtree font-extrabold text-[60px] md:text-[72px] xl:text-[84px] tracking-[-3.8px] text-center mt-2">
+                <div className="font-figtree font-extrabold text-[50px] md:text-[60px] xl:text-[70px] tracking-[-3.8px] text-center mt-2">
                   Software Consultancy
                 </div>
               </span>
@@ -71,9 +71,6 @@ export default function HomePage() {
                 We'll play the long game, with you.
               </p>
             </div>
-
-
-
 
             <a
               href="https://calendly.com/rohit-beneathatree/introduction"
