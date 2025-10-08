@@ -64,7 +64,7 @@ export default function HomePage() {
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with love and precision.
               </p>
-              <p className="mb-4">
+              <p className="mb-2">
                 It doesn't matter whether you're a solopreneur, startup or enterprise.
               </p>
               <p className="font-bold mb-4">
@@ -76,7 +76,7 @@ export default function HomePage() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-block px-6 py-4 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
+              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
               style={{ backgroundColor: "#fff", color: "#3A8C70" }}
             >
               Schedule a Call
