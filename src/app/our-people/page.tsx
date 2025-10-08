@@ -122,52 +122,65 @@ const people: Person[] = [
     img: "/people/sachin.jpg",
     socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/sachin-phatak/" }],
   },
-  { name: "Sagar", role: "Operations Manager", img: "/people/sagar.jpg" },
-  { name: "Shabeera", role: "Full-Stack Develeper", img: "/people/shabeera.jpg" },
   {
-    name: "Sharikh",
+    "name": "Sagar",
+    "role": "Operations Manager",
+    "img": "/people/sagar.jpg",
+    "socials":
+    {
+      "platform": "instagram",
+      "url": "https://www.instagram.com/otziburl/"
+    },
+      {
+    "platform": "linkedin",
+    "url": "https://www.linkedin.com/in/sagar-r-thalavar-developer-gpti/"
+  }
+   },
+{ name: "Shabeera", role: "Full-Stack Develeper", img: "/people/shabeera.jpg" },
+{
+  name: "Sharikh",
     role: "Full-Stack Developer",
-    img: "/people/sharikh.jpg",
-    socials: [
-      { platform: "instagram", url: "https://www.instagram.com/sharikhahmed17/" },
-      { platform: "github", url: "https://github.com/sharikhBat" },
-    ],
+      img: "/people/sharikh.jpg",
+        socials: [
+          { platform: "instagram", url: "https://www.instagram.com/sharikhahmed17/" },
+          { platform: "github", url: "https://github.com/sharikhBat" },
+        ],
   },
-  { name: "Shashank", role: "Co-Founder", img: "/people/shashank.jpg" },
-  {
-    name: "Sumit",
+{ name: "Shashank", role: "Co-Founder", img: "/people/shashank.jpg" },
+{
+  name: "Sumit",
     role: "Full-Stack Developer",
-    img: "/people/sumit.jpg",
-    socials: [
-      { platform: "web", url: "https://www.sumitsute.com/" },
-      { platform: "linkedin", url: "https://www.linkedin.com/in/sumitsute/" },
-      { platform: "github", url: "https://github.com/sutesumit" },
-    ],
+      img: "/people/sumit.jpg",
+        socials: [
+          { platform: "web", url: "https://www.sumitsute.com/" },
+          { platform: "linkedin", url: "https://www.linkedin.com/in/sumitsute/" },
+          { platform: "github", url: "https://github.com/sutesumit" },
+        ],
   },
-  {
-    name: "Srinidhi",
+{
+  name: "Srinidhi",
     role: "Co-Founder",
-    img: "/people/srinidhi.jpg",
-    socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/srinidhiprahlad/" }],
+      img: "/people/srinidhi.jpg",
+        socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/srinidhiprahlad/" }],
   },
-  {
-    name: "Tasavour",
+{
+  name: "Tasavour",
     role: "Full-Stack Developer",
-    img: "/people/tasavour.jpg",
-    socials: [
-      { platform: "web", url: "https://syedtasavour.me/" },
-      { platform: "linkedin", url: "https://www.linkedin.com/in/syedtasavour" },
-      { platform: "github", url: "https://github.com/syedtasavour" },
-    ],
+      img: "/people/tasavour.jpg",
+        socials: [
+          { platform: "web", url: "https://syedtasavour.me/" },
+          { platform: "linkedin", url: "https://www.linkedin.com/in/syedtasavour" },
+          { platform: "github", url: "https://github.com/syedtasavour" },
+        ],
   },
-  { name: "Tharun", role: "Full Stack Developer", img: "/people/tharun.jpg" },
-  {
-    name: "Vijay",
+{ name: "Tharun", role: "Full Stack Developer", img: "/people/tharun.jpg" },
+{
+  name: "Vijay",
     role: "Cook and Caretaker",
-    img: "/people/vijay.jpg",
-    socials: [{ platform: "instagram", url: "https://www.instagram.com/vijayraikwar124/" }],
+      img: "/people/vijay.jpg",
+        socials: [{ platform: "instagram", url: "https://www.instagram.com/vijayraikwar124/" }],
   },
-  { name: "Yaana", role: "Office Administrator", img: "/people/yaana.jpg" },
+{ name: "Yaana", role: "Office Administrator", img: "/people/yaana.jpg" },
 ];
 // ----------------------------------------------------------------------
 
