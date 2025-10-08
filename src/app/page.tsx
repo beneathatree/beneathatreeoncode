@@ -85,7 +85,7 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 left-0 w-full z-0 overflow-visible"
+            className="absolute bottom-0 left-0 w-full z-0 overflow-hidden"
             style={{
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
               transition: "transform 0.2s ease-out",
