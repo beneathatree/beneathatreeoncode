@@ -162,7 +162,7 @@ export default function HomePage() {
               >
                 We&apos;ll build a lean MVP to help you reach the market.
                 <br />
-                Once validated, we&apos;ll make sure your product grows -
+                Once validated, we&apos;ll make sure your product grows-
                 <br />
                 while being secure, scalable, and reliable.
               </p>
