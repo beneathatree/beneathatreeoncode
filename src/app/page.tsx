@@ -60,14 +60,14 @@ export default function HomePage() {
             </h1>
 
             {/* Supporting Sentences — each on its own line */}
-            <div className="mt-4 max-w-[1000px] mx-auto text-center text-[22px] sm:text-[26px] md:text-[28px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px]">
+            <div className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px]">
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with love and precision.
               </p>
               <p className="mb-4">
                 It doesn't matter whether you're a solopreneur, startup or enterprise.
               </p>
-              <p className="font-bold">
+              <p className="font-bold mb-4">
                 We'll play the long game, with you.
               </p>
             </div>
