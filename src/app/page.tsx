@@ -85,7 +85,7 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 left-0 w-full z-0 overflow-hidden"
+            className="absolute bottom-0 sm:bottom-[30px] md:bottom-[50px] lg:bottom-[70px] xl:bottom-[90px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible"
             style={{
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
               transition: "transform 0.2s ease-out",
@@ -94,7 +94,7 @@ export default function HomePage() {
             <img
               src="/illustrations/hero.svg"
               alt="Batstory Illustration"
-              className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[420px] xl:min-h-[480px] 2xl:min-h-[520px] 3xl:min-h-[580px]"
+              className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px] 3xl:min-h-[520px]"
               draggable="false"
             />
           </div>
