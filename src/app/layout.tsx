@@ -6,6 +6,9 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "BeneathAtree",
   description: "BeneathATree is a bespoke software consultancy based in Bangalore, India. We're the people who you go all the way with.",
+  icons: {
+    icon: "/illustrations/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
