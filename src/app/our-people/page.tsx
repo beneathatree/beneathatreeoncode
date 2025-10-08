@@ -134,7 +134,14 @@ const people: Person[] = [
       },
     ],
   },
-  { name: "Shabeera", role: "Full-Stack Develeper", img: "/people/shabeera.jpg" },
+  { 
+    name: "Shabeera",
+    role: "Full-Stack Develeper",
+    img: "/people/shabeera.jpg",
+    socials: [
+      { platform: "linkedin", url: "https://www.linkedin.com/in/shaik-shabeera-begum-9805661b7/" },
+    ],
+  },
   {
     name: "Sharikh",
     role: "Full-Stack Developer",
