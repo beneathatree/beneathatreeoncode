@@ -124,10 +124,10 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible"
+            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible reveal"
             style={{
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
-              transition: "transform 0.2s ease-out",
+              transition: "transform 0.2s ease-out, opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <img
