@@ -16,7 +16,8 @@ export default function OurWork() {
             href="https://www.uplift.ai/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
+            style={{ willChange: "transform" }}
           >
             <div className="w-full h-28 flex items-center justify-center">
               <img
@@ -40,7 +41,8 @@ export default function OurWork() {
             href="https://digifarm.io/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
+            style={{ willChange: "transform" }}
           >
             <div className="w-full h-28 flex items-center justify-center">
               <img
@@ -64,7 +66,8 @@ export default function OurWork() {
           href="https://www.speak2family.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white hover:scale-[1.02] transition-transform duration-200"
+          className="w-full flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
+          style={{ willChange: "transform" }}
         >
           <div className="w-full h-28 flex items-center justify-center">
             <img
