@@ -6,7 +6,7 @@ export default function ContactCta() {
         <h2
           className="
             font-figtree font-bold
-            text-3xl sm:text-4xl md:text-4xl
+            text-4xl sm:text-5xl md:text-5xl
             tracking-[-1px]
             leading-tight
             text-[#42A185]
@@ -25,11 +25,11 @@ export default function ContactCta() {
           rel="noreferrer"
           className="
             inline-block
-            px-6 py-2
+            px-6 py-3
             rounded-lg
             font-figtree font-semibold
             text-white
-            text-base
+            text-xl
             transition-transform duration-200 ease-in-out
             hover:scale-[1.03]
             shadow-md hover:shadow-lg
