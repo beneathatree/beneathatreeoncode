@@ -197,7 +197,7 @@ const people: Person[] = [
   },
   {
     name: "Tharun",
-    role: "Full Stack Developer",
+    role: "Full-Stack Developer",
     img: "/people/tharun.jpg",
   },
   {
