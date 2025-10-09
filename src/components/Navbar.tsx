@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50"
+      className="fixed top-0 left-0 w-full z-50 shadow-md"
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.90)",
         backdropFilter: menuOpen ? "none" : "blur(8px)",
