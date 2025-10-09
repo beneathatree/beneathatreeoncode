@@ -38,25 +38,25 @@ export default function Navbar() {
         WebkitBackdropFilter: menuOpen ? "none" : "blur(8px)",
       }}
     >
-      <div className="w-full px-4 py-3">
+      <div className="w-full px-4 py-4">
         {/* Top Row: Logo + Desktop Links + Hamburger */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center pl-2">
           {/* Logo */}
           <Link href="/">
             <Image
               src="/illustrations/batlogo.svg"
               alt="Beneathatree Logo"
-              width={120}
-              height={40}
+              width={140}
+              height={48}
               className="object-contain"
             />
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6 items-center">
+          <div className="hidden md:flex space-x-6 items-center pr-2">
             <Link
               href="/our-people"
-              className="font-figtree text-link text-sm font-medium"
+              className="font-figtree text-link text-m font-medium"
             >
               Our People
             </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
               href="https://www.upwork.com/agencies/881225776448200704/"
               target="_blank"
               rel="noreferrer"
-              className="font-figtree text-link text-sm font-medium"
+              className="font-figtree text-link text-m font-medium"
             >
               Us on Upwork
             </a>
@@ -72,7 +72,7 @@ export default function Navbar() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-xs transition-transform duration-200 ease-in-out hover:scale-[1.03]"
+              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-transform duration-200 ease-in-out hover:scale-[1.03]"
               style={{ backgroundColor: "#42A185" }}
             >
               Schedule a Call
