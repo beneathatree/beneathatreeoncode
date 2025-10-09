@@ -101,7 +101,7 @@ export default function Testimonials() {
 
         {/* Cards */}
         <div
-          className="flex gap-2 justify-center items-center overflow-visible"
+          className="flex gap-5 justify-center items-center overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -113,18 +113,19 @@ export default function Testimonials() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -50, opacity: 0 }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                className="w-[326px] h-[454px] p-5 rounded-xl border border-black/10 bg-white/60 backdrop-blur-md flex flex-col justify-between items-center text-center hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
+                className="w-[326px] h-[456px] p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
               >
-                <p className="font-figtree text-[21px] font-normal text-[#444] leading-relaxed mb-6">
+                <p className="font-figtree font-medium text-[18px] tracking-[-0.7px] leading-[1.5em] text-[#0E0E0E] mb-6">
                   “{t.quote}”
                 </p>
-                <div className="font-figtree text-[15px] font-bold text-[#171717]">
-                  {t.name}
-                  {t.company && (
-                    <span className="text-[#888] font-normal">
-                      {" "}
-                      — {t.company}
-                    </span>
+                <div className="flex flex-col items-center min-h-[48px]">
+                  <div className="font-figtree font-semibold text-[20px] tracking-[-0.5px] leading-[1.5em] text-[#171717]">
+                    {t.name}
+                  </div>
+                  {t.company.trim() !== "" && (
+                    <div className="font-figtree text-[14px] tracking-[0px] leading-[1.5em] text-[#888] font-normal">
+                       {t.company}
+                    </div>
                   )}
                 </div>
               </motion.div>
