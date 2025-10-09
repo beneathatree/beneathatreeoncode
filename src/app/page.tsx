@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactCta from "../components/ContactCta";
 import OurWork from "../components/ourwork";
@@ -7,7 +7,9 @@ import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
   // --- Effect for Parallax Scroll Variable (Kept for Hero Illustration) ---
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
+    const t = requestAnimationFrame(() => setIsLoaded(true));
     const handleScroll = () => {
       document.documentElement.style.setProperty(
         "--scroll-y",
@@ -15,7 +17,34 @@ export default function HomePage() {
       );
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      cancelAnimationFrame(t);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Reveal on scroll (no layout changes)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      elements.forEach((el) => el.classList.add("show"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -33,7 +62,10 @@ export default function HomePage() {
       >
         {/* Hero Section */}
         <section className="relative text-white overflow-hidden pt-[40px] sm:pt-[60px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
-          <div className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center">
+          <div
+            className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center reveal"
+            style={{ transitionDelay: "0ms" }}
+          >
             <h1 className="text-center mb-2 px-4 sm:px-6 md:px-8">
               {/* Mobile layout */}
               <span className="block sm:hidden">
@@ -60,7 +92,10 @@ export default function HomePage() {
             </h1>
 
             {/* Supporting Sentences */}
-            <div className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px]">
+            <div
+              className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] reveal"
+              style={{ transitionDelay: "80ms" }}
+            >
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with
                 love and precision.
@@ -76,8 +111,12 @@ export default function HomePage() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105"
-              style={{ backgroundColor: "#fff", color: "#3A8C70" }}
+              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105 reveal"
+              style={{
+                backgroundColor: "#fff",
+                color: "#3A8C70",
+                transitionDelay: "160ms",
+              }}
             >
               Schedule a Call
             </a>
@@ -115,9 +154,10 @@ export default function HomePage() {
           {/* Row 1 */}
           <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
             <div
-              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl p-0"
+              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl p-0 reveal"
               style={{
                 background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
+                transitionDelay: "100ms",
               }}
             >
               <Image
@@ -129,7 +169,10 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="w-full sm:max-w-[500px] text-left">
+            <div
+              className="w-full sm:max-w-[500px] text-left reveal"
+              style={{ transitionDelay: "160ms" }}
+            >
               <h2
                 className="
           font-figtree font-bold
@@ -164,7 +207,10 @@ export default function HomePage() {
 
           {/* Row 2 */}
           <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto">
-            <div className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0">
+            <div
+              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
+              style={{ transitionDelay: "220ms" }}
+            >
               <Image
                 src="/illustrations/funded.svg"
                 alt="Funded startups illustration"
@@ -174,7 +220,10 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="w-full sm:max-w-[500px] text-left">
+            <div
+              className="w-full sm:max-w-[500px] text-left reveal"
+              style={{ transitionDelay: "280ms" }}
+            >
               <h2
                 className="
           font-figtree font-bold
@@ -204,7 +253,10 @@ export default function HomePage() {
 
           {/* Row 3 */}
           <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
-            <div className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0">
+            <div
+              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
+              style={{ transitionDelay: "340ms" }}
+            >
               <Image
                 src="/illustrations/established.svg"
                 alt="Enterprise teams illustration"
@@ -214,7 +266,10 @@ export default function HomePage() {
               />
             </div>
 
-            <div className="w-full sm:max-w-[500px] text-left">
+            <div
+              className="w-full sm:max-w-[500px] text-left reveal"
+              style={{ transitionDelay: "400ms" }}
+            >
               <h2
                 className="
           font-figtree font-bold

@@ -55,6 +55,22 @@ body {
 
 /* --- Utility Classes --- */
 
+/* Smooth reveal-on-scroll utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition-property: opacity, transform;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 250ms);
+  will-change: opacity, transform;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Font Utilities (for Tailwind) */
 .font-figtree {
   font-family: var(--font-figtree);
