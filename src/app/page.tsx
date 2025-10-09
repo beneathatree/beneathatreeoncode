@@ -113,17 +113,9 @@ export default function HomePage() {
   "
         >
           {/* Row 1 */}
-          <div
-            id="row1"
-            className="
-      flex flex-col md:flex-row
-      items-center justify-center
-      gap-10
-      max-w-screen-xl mx-auto
-    "
-          >
+          <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
             <div
-              className="w-full sm:max-w-[380px] rounded-2xl shadow-xl p-0"
+              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl p-0"
               style={{
                 background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
               }}
@@ -131,17 +123,17 @@ export default function HomePage() {
               <Image
                 src="/illustrations/early.svg"
                 alt="Early stage startups illustration"
-                width={380}
+                width={500}
                 height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
 
-            <div className="w-full sm:max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[500px] text-left">
               <h2
                 className="
           font-figtree font-bold
-          text-[42px]
+          text-[50px]
           tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
@@ -155,7 +147,7 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[16px]
+          text-[21px]
           tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
@@ -171,30 +163,22 @@ export default function HomePage() {
           </div>
 
           {/* Row 2 */}
-          <div
-            id="row2"
-            className="
-      flex flex-col md:flex-row-reverse
-      items-center justify-center
-      gap-10
-      max-w-screen-xl mx-auto
-    "
-          >
-            <div className="w-full sm:max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
+          <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto">
+            <div className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/funded.svg"
                 alt="Funded startups illustration"
-                width={380}
+                width={500}
                 height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
 
-            <div className="w-full sm:max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[500px] text-left">
               <h2
                 className="
           font-figtree font-bold
-          text-[42px]
+          text-[50px]
           tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
@@ -206,7 +190,7 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[16px]
+          text-[21px]
           tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
@@ -219,30 +203,22 @@ export default function HomePage() {
           </div>
 
           {/* Row 3 */}
-          <div
-            id="row3"
-            className="
-      flex flex-col md:flex-row
-      items-center justify-center
-      gap-10
-      max-w-screen-xl mx-auto
-    "
-          >
-            <div className="w-full sm:max-w-[380px] rounded-2xl shadow-xl bg-white p-0">
+          <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
+            <div className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0">
               <Image
                 src="/illustrations/established.svg"
                 alt="Enterprise teams illustration"
-                width={380}
+                width={500}
                 height={240}
                 className="rounded-2xl object-contain w-full h-auto"
               />
             </div>
 
-            <div className="w-full sm:max-w-[380px] text-left">
+            <div className="w-full sm:max-w-[500px] text-left">
               <h2
                 className="
           font-figtree font-bold
-          text-[42px]
+          text-[50px]
           tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
@@ -256,7 +232,7 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[16px]
+          text-[21px]
           tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
