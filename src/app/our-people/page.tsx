@@ -203,8 +203,8 @@ Our People
 {sorted.map((person, idx) => (
 <div
 key={person.name + idx}
-className={`overflow-hidden rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 hover:scale-[1.015] hover:ring-1 hover:ring-[#D0EAE2]
-               transform-gpu w-full max-w-sm mx-auto
+className={`overflow-hidden rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.03] hover:ring-1 hover:ring-[#D0EAE2]
+               transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-full max-w-sm mx-auto
                ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
 style={{
 height: 420,
@@ -212,6 +212,7 @@ transitionProperty: "opacity, transform",
 transitionDuration: "700ms",
 transitionTimingFunction: "cubic-bezier(.22,.9,.29,1)",
 transitionDelay: `${idx * 70}ms`,
+willChange: "transform, opacity",
 }}
 >
 <div style={{ height: 265 }}>
