@@ -84,7 +84,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
-      <div className="max-w-screen-xl mx-auto relative flex items-center justify-center">
+      <div className="max-w-[1000px] mx-auto relative flex items-center justify-center">
         {/* Left Arrow */}
         <button
           aria-label="Previous"
@@ -101,7 +101,7 @@ export default function Testimonials() {
 
         {/* Cards with directional slide + fade */}
         <div
-          className="flex gap-4 justify-center items-center overflow-visible"
+          className="flex gap-2 justify-center items-center overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -113,7 +113,7 @@ export default function Testimonials() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -50, opacity: 0 }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                className="w-[320px] h-[454px] p-8 rounded-xl border border-black/10 bg-white/60 backdrop-blur-md flex flex-col justify-between hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
+                className="w-[312px] h-[454px] p-5 rounded-xl border border-black/10 bg-white/60 backdrop-blur-md flex flex-col justify-between hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
               >
                 <p className="font-figtree text-[18px] font-normal text-[#444] leading-relaxed mb-6">
                   “{t.quote}”
