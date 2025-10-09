@@ -106,7 +106,7 @@ export default function HomePage() {
     relative
     text-white
     overflow-hidden
-    pt-[40px] sm:pt-[60px] md:pt-[80px]
+    pt-[100px] sm:pt-[80px] md:pt-[100px]
     pb-[40px] sm:pb-[60px] md:pb-[80px]
     space-y-16
     px-4        /* add horizontal gutter on mobile */
