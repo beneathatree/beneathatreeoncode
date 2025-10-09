@@ -6,7 +6,7 @@ export default function OurWork() {
       </h2>
 
       {/* Main container: max-w-4xl (approx 1024px) for alignment */}
-      <div className="flex flex-col gap-10 max-w-4xl mx-auto">
+      <div className="flex flex-col gap-10 max-w-[1000px] mx-auto">
 
         {/* 1. Top Row: Uplift and Digifarm side-by-side with equal width */}
         <div className="flex flex-col md:flex-row justify-center gap-8">

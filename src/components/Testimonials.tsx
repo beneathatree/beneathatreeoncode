@@ -53,7 +53,7 @@ export default function Testimonials() {
       if (!isHovered) {
         setStartIndex((prev) => (prev + 1) % total);
       }
-    }, 2500); // 2.5s delay
+    }, 2500);
 
     return () => {
       window.removeEventListener("resize", updateCardsPerPage);
@@ -89,7 +89,7 @@ export default function Testimonials() {
         <button
           aria-label="Previous"
           onClick={handlePrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowleft.svg"
@@ -99,7 +99,7 @@ export default function Testimonials() {
           />
         </button>
 
-        {/* Cards with directional slide + fade */}
+        {/* Cards */}
         <div
           className="flex gap-2 justify-center items-center overflow-visible"
           onMouseEnter={() => setIsHovered(true)}
@@ -113,12 +113,12 @@ export default function Testimonials() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -50, opacity: 0 }}
                 transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                className="w-[312px] h-[454px] p-5 rounded-xl border border-black/10 bg-white/60 backdrop-blur-md flex flex-col justify-between hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
+                className="w-[326px] h-[454px] p-5 rounded-xl border border-black/10 bg-white/60 backdrop-blur-md flex flex-col justify-between items-center text-center hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg"
               >
-                <p className="font-figtree text-[18px] font-normal text-[#444] leading-relaxed mb-6">
+                <p className="font-figtree text-[21px] font-normal text-[#444] leading-relaxed mb-6">
                   “{t.quote}”
                 </p>
-                <div className="font-figtree text-[18px] font-bold text-[#171717]">
+                <div className="font-figtree text-[15px] font-bold text-[#171717]">
                   {t.name}
                   {t.company && (
                     <span className="text-[#888] font-normal">
@@ -136,7 +136,7 @@ export default function Testimonials() {
         <button
           aria-label="Next"
           onClick={handleNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowright.svg"
