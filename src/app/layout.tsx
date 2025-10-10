@@ -57,7 +57,10 @@ export const metadata: Metadata = {
     "max-video-preview": -1,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/illustrations/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
     apple: "/apple-touch-icon.png",
     shortcut: "/favicon-32x32.png",
   },
