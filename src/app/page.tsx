@@ -61,7 +61,7 @@ export default function HomePage() {
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-[40px] sm:pt-[60px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
+        <section className="relative text-white overflow-hidden pt-[72px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
           <div
             className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center reveal"
             style={{ transitionDelay: "0ms" }}
@@ -287,7 +287,7 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[15.6px] sm:text-[19px] md:text-[21px]
+          text-[15.7px] sm:text-[19px] md:text-[21px]
           tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]

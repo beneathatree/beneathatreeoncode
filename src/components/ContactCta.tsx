@@ -2,7 +2,6 @@ export default function ContactCta() {
   return (
     <section className="pt-8 pb-16 bg-white text-center">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Main Heading/Text */}
         <h2
           className="
             font-figtree font-bold
@@ -18,11 +17,10 @@ export default function ContactCta() {
           We&apos;ll figure it out, together.
         </h2>
 
-        {/* Button */}
         <a
           href="https://calendly.com/rohit-beneathatree/introduction"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener nofollow external"
           className="
             inline-block
             px-6 py-3

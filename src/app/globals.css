@@ -1,8 +1,4 @@
-/* 1️⃣ Imports at the very top */
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap");
-
-/* 2️⃣ Tailwind import */
+/* Tailwind */
 @import "tailwindcss";
 
 /* --- Root Variables and Theme --- */
@@ -13,10 +9,9 @@
   --link-color: #888888; /* default link color */
   --link-hover: #000000; /* link hover color */
 
-  /* Fonts */
-  --font-sans: "Arial", "Helvetica", sans-serif;
-  --font-figtree: "Figtree", sans-serif;
-  --font-playfair: "Playfair Display", serif;
+  /* Fonts (populated by next/font variables from layout) */
+  --font-figtree: var(--font-figtree);
+  --font-playfair: var(--font-playfair);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,15 +22,16 @@
 }
 
 /* --- Base Body Styles --- */
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
 html,
 body {
   overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-figtree), system-ui, -apple-system, Segoe UI, Roboto,
+    Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* --- Custom Animations --- */
@@ -71,13 +67,19 @@ body {
   transform: translateY(0);
 }
 
+/* ✅ No-JS fallback: reveal everything */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}
+
 /* Font Utilities (for Tailwind) */
 .font-figtree {
-  font-family: var(--font-figtree);
+  font-family: var(--font-figtree), sans-serif;
 }
 
 .font-playfair {
-  font-family: var(--font-playfair);
+  font-family: var(--font-playfair), serif;
 }
 
 /* Link Hover Effect */
