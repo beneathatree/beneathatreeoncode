@@ -176,8 +176,8 @@ export default function HomePage() {
               <h2
                 className="
           font-figtree font-bold
-          text-[50px]
-          tracking-[-2.1px]
+          text-[32px] sm:text-[40px] md:text-[50px]
+          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
           mb-4
@@ -190,8 +190,8 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[21px]
-          tracking-[-0.7px]
+          text-[16px] sm:text-[19px] md:text-[21px]
+          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
         "
@@ -227,8 +227,8 @@ export default function HomePage() {
               <h2
                 className="
           font-figtree font-bold
-          text-[50px]
-          tracking-[-2.1px]
+          text-[32px] sm:text-[40px] md:text-[50px]
+          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
           mb-4
@@ -239,8 +239,8 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[21px]
-          tracking-[-0.7px]
+          text-[16px] sm:text-[19px] md:text-[21px]
+          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
         "
@@ -273,8 +273,8 @@ export default function HomePage() {
               <h2
                 className="
           font-figtree font-bold
-          text-[50px]
-          tracking-[-2.1px]
+          text-[32px] sm:text-[40px] md:text-[50px]
+          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
           leading-[1.2em]
           text-[#171717]
           mb-4
@@ -287,8 +287,8 @@ export default function HomePage() {
               <p
                 className="
           font-figtree font-semibold
-          text-[21px]
-          tracking-[-0.7px]
+          text-[15.6px] sm:text-[19px] md:text-[21px]
+          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
           leading-[1.4em]
           text-[#888888]
         "

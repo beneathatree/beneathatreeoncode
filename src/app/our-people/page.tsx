@@ -234,7 +234,7 @@ export default function OurPeople() {
   return (
     <div className="bg-[#F4FAF9] min-h-screen px-4 sm:px-6 py-12 sm:py-16">
       <div className="max-w-6xl mx-auto">
-        <h1 className="font-figtree font-bold text-3xl sm:text-4xl lg:text-[50px] text-black text-center tracking-tight mt-8 sm:mt-12 mb-8 sm:mb-12">
+      <h1 className="font-figtree font-bold text-3xl sm:text-4xl lg:text-[50px] text-black text-center tracking-tight mt-[80px] sm:mt-12 mb-8 sm:mb-12">
           Our People
         </h1>
 
