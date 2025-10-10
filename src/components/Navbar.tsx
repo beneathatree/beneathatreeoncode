@@ -33,9 +33,9 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 w-full z-50 shadow-md"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.90)",
-        backdropFilter: menuOpen ? "none" : "blur(8px)",
-        WebkitBackdropFilter: menuOpen ? "none" : "blur(8px)",
+        backgroundColor: "rgba(255, 255, 255, 0.60)",
+        backdropFilter: "blur(6px)",
+        WebkitBackdropFilter: "blur(6px)",
       }}
     >
       <div className="w-full px-4 py-4">
@@ -142,21 +142,21 @@ export default function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
-              ref={menuRef}
-              initial={{ height: 0, opacity: 0, y: -10 }}
-              animate={{ height: "auto", opacity: 1, y: 0 }}
-              exit={{ height: 0, opacity: 0, y: -10 }}
-              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden overflow-hidden px-2"
-              style={{
-                backgroundColor: "transparent",
-                backdropFilter: "blur(2px)",
-                WebkitBackdropFilter: "blur(2px)",
-                boxShadow: "none",
-                border: "none",
-                willChange: "height, opacity, transform",
-              }}
-            >
+            ref={menuRef}
+            initial={{ height: 0, opacity: 0, y: -10 }}
+            animate={{ height: "auto", opacity: 1, y: 0 }}
+            exit={{ height: 0, opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+            className="md:hidden overflow-hidden px-4"
+            style={{
+              backgroundColor: "rgba(255, 255, 255, 0.00)", // removed
+              backdropFilter: "none",                  // removed 
+              WebkitBackdropFilter: "none",
+              boxShadow: "none",
+              border: "none",
+              willChange: "height, opacity, transform",
+            }}
+          >
               <div className="flex flex-col gap-5 pt-4 pb-4">
                 <Link
                   href="/our-people"
