@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LenisProvider from "../components/LenisProvider";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 
@@ -84,10 +85,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning          // ✅ avoids a class mismatch warning during hydration
     >
       <body className={`${figtree.variable} ${playfair.variable} flex flex-col min-h-screen`}>
-        <Navbar />
-        {/* Compensate for fixed header to avoid CLS */}
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <LenisProvider>
+          <Navbar />
+          {/* Compensate for fixed header to avoid CLS */}
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </LenisProvider>
 
         {/* No-JS fallback for reveal effects (runs before hydration) */}
         <Script id="remove-no-js" strategy="beforeInteractive">
