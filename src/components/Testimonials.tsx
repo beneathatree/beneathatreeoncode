@@ -92,10 +92,11 @@ export default function Testimonials() {
   return (
     <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
       <div
-        className="max-w-[1000px] mx-auto relative flex items-center justify-center"
+        className="max-w-[1000px] mx-auto relative flex items-center justify-center reveal"
         role="region"
         aria-live="polite"
         aria-label="Testimonials carousel"
+        style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
       >
         {/* Left Arrow */}
         <button
@@ -162,7 +163,7 @@ export default function Testimonials() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
+      <div className="flex justify-center mt-6 space-x-2 reveal" style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
         {testimonials.map((_, i) => (
           <button
             key={i}

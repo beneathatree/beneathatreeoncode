@@ -10,7 +10,9 @@ export default function ContactCta() {
             leading-tight
             text-[#42A185]
             mb-6
+            reveal
           "
+          style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
         >
           Don&apos;t fit this bill? Contact us anyway.
           <br />
@@ -31,8 +33,9 @@ export default function ContactCta() {
             transition-transform duration-200 ease-in-out
             hover:scale-[1.03]
             shadow-md hover:shadow-lg
+            reveal
           "
-          style={{ backgroundColor: "#42A185" }}
+          style={{ backgroundColor: "#42A185", "--reveal-delay": "100ms" } as React.CSSProperties}
         >
           Get in Touch
         </a>

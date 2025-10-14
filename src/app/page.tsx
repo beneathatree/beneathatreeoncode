@@ -6,28 +6,34 @@ import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
 
 export default function HomePage() {
-  // --- Effect for Parallax Scroll Variable (Kept for Hero Illustration) ---
   const [isLoaded, setIsLoaded] = useState(false);
+
+  // Page-load entrance + parallax variable
   useEffect(() => {
-    const t = requestAnimationFrame(() => setIsLoaded(true));
+    const t = requestAnimationFrame(() => {
+      setIsLoaded(true);
+      // Add a document-level flag so CSS can trigger entrance animations
+      document.documentElement.classList.add("is-loaded");
+    });
+
     const handleScroll = () => {
-      document.documentElement.style.setProperty(
-        "--scroll-y",
-        `${window.scrollY}px`
-      );
+      document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
     };
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       cancelAnimationFrame(t);
       window.removeEventListener("scroll", handleScroll);
+      document.documentElement.classList.remove("is-loaded");
     };
   }, []);
 
-  // Reveal on scroll (no layout changes)
+  // Reveal on scroll (unchanged)
   useEffect(() => {
     if (typeof window === "undefined") return;
     const elements = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
-    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) {
       elements.forEach((el) => el.classList.add("show"));
       return;
@@ -49,7 +55,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Gradient wrapper only for Hero + Cards */}
       <div
         className="w-full overflow-x-hidden bg-white"
         style={{
@@ -63,11 +68,14 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="relative text-white overflow-hidden pt-[72px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
           <div
-            className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center reveal"
-            style={{ transitionDelay: "0ms" }}
+            className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center"
           >
-            <h1 className="text-center mb-2 px-4 sm:px-6 md:px-8">
-              {/* Mobile layout */}
+            {/* Title */}
+            <h1
+              className="text-center mb-2 px-4 sm:px-6 md:px-8 fade-seq"
+              style={{ animationDelay: "150ms" }}
+            >
+              {/* Mobile */}
               <span className="block sm:hidden">
                 <span className="block font-playfair font-semibold italic text-[48px] leading-[1em] tracking-[-3.8px] text-center">
                   Bespoke
@@ -80,7 +88,7 @@ export default function HomePage() {
                 </span>
               </span>
 
-              {/* Larger screens — forced line breaks */}
+              {/* Larger screens */}
               <span className="hidden sm:block">
                 <div className="font-playfair font-semibold italic text-[60px] md:text-[70px] xl:text-[80px] leading-[0.6em] tracking-[-3.8px] text-center">
                   Bespoke
@@ -93,8 +101,8 @@ export default function HomePage() {
 
             {/* Supporting Sentences */}
             <div
-              className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] reveal"
-              style={{ transitionDelay: "80ms" }}
+              className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] fade-seq"
+              style={{ animationDelay: "200ms" }}
             >
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with
@@ -107,16 +115,17 @@ export default function HomePage() {
               <p className="font-bold mb-4">We'll play the long game, with you.</p>
             </div>
 
+            {/* CTA */}
             <a
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105 reveal"
+              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-transform duration-200 ease-in-out hover:scale-105 fade-seq"
               style={{
                 backgroundColor: "#fff",
                 color: "#3A8C70",
-                transitionDelay: "160ms",
-              }}
+                animationDelay: "250ms",
+              } as React.CSSProperties}
             >
               Schedule a Call
             </a>
@@ -124,10 +133,12 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible reveal"
+            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible fade-seq-hero"
             style={{
+              animationDelay: "300ms",
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
-              transition: "transform 0.2s ease-out, opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+              transition:
+                "transform 0.2s ease-out, opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <img
@@ -157,8 +168,8 @@ export default function HomePage() {
               className="w-full sm:max-w-[500px] rounded-2xl shadow-xl p-0 reveal"
               style={{
                 background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
-                transitionDelay: "100ms",
-              }}
+                "--reveal-delay": "100ms",
+              } as React.CSSProperties}
             >
               <Image
                 src="/illustrations/early.svg"
@@ -171,7 +182,7 @@ export default function HomePage() {
 
             <div
               className="w-full sm:max-w-[500px] text-left reveal"
-              style={{ transitionDelay: "160ms" }}
+              style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
             >
               <h2
                 className="
@@ -209,7 +220,7 @@ export default function HomePage() {
           <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto">
             <div
               className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-              style={{ transitionDelay: "220ms" }}
+              style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
             >
               <Image
                 src="/illustrations/funded.svg"
@@ -222,7 +233,7 @@ export default function HomePage() {
 
             <div
               className="w-full sm:max-w-[500px] text-left reveal"
-              style={{ transitionDelay: "280ms" }}
+              style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
             >
               <h2
                 className="
@@ -255,7 +266,7 @@ export default function HomePage() {
           <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
             <div
               className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-              style={{ transitionDelay: "340ms" }}
+              style={{ "--reveal-delay": "340ms" } as React.CSSProperties}
             >
               <Image
                 src="/illustrations/established.svg"
@@ -268,7 +279,7 @@ export default function HomePage() {
 
             <div
               className="w-full sm:max-w-[500px] text-left reveal"
-              style={{ transitionDelay: "400ms" }}
+              style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
             >
               <h2
                 className="

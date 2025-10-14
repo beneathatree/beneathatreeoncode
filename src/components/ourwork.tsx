@@ -4,7 +4,10 @@ import Script from "next/script";
 export default function OurWork() {
   return (
     <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 pb-24">
-      <h2 className="text-4xl font-figtree font-bold text-[#171717] mb-16 text-center tracking-[-1px]">
+      <h2 
+        className="text-4xl font-figtree font-bold text-[#171717] mb-16 text-center tracking-[-1px] reveal"
+        style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
+      >
         Our Work
       </h2>
 
@@ -30,8 +33,8 @@ export default function OurWork() {
             href="https://www.uplift.ai/"
             target="_blank"
             rel="noopener nofollow external"
-            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
-            style={{ willChange: "transform" }}
+            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg reveal"
+            style={{ willChange: "transform", "--reveal-delay": "100ms" } as React.CSSProperties}
           >
             <div className="w-full h-28 flex items-center justify-center">
               <Image
@@ -57,8 +60,8 @@ export default function OurWork() {
             href="https://digifarm.io/"
             target="_blank"
             rel="noopener nofollow external"
-            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
-            style={{ willChange: "transform" }}
+            className="w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg reveal"
+            style={{ willChange: "transform", "--reveal-delay": "200ms" } as React.CSSProperties}
           >
             <div className="w-full h-28 flex items-center justify-center">
               <Image
@@ -83,8 +86,8 @@ export default function OurWork() {
           href="https://www.speak2family.com/"
           target="_blank"
           rel="noopener nofollow external"
-          className="w-full flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg"
-          style={{ willChange: "transform" }}
+          className="w-full flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-0.5 hover:shadow-lg reveal"
+          style={{ willChange: "transform", "--reveal-delay": "300ms" } as React.CSSProperties}
         >
           <div className="w-full h-28 flex items-center justify-center">
             <Image
