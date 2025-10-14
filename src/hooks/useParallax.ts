@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
@@ -33,41 +32,28 @@ export function useParallax(options: ParallaxOptions = {}) {
     const element = elementRef.current;
     const triggerElement = trigger ? document.querySelector(trigger) : element;
 
-    // Set initial transform based on direction
     const getInitialTransform = () => {
       switch (direction) {
-        case "up":
-          return { y: 100 };
-        case "down":
-          return { y: -100 };
-        case "left":
-          return { x: 100 };
-        case "right":
-          return { x: -100 };
-        default:
-          return { y: 100 };
+        case "up": return { y: 100 };
+        case "down": return { y: -100 };
+        case "left": return { x: 100 };
+        case "right": return { x: -100 };
+        default: return { y: 100 };
       }
     };
 
     const getFinalTransform = () => {
       switch (direction) {
-        case "up":
-          return { y: -100 * speed };
-        case "down":
-          return { y: 100 * speed };
-        case "left":
-          return { x: -100 * speed };
-        case "right":
-          return { x: 100 * speed };
-        default:
-          return { y: -100 * speed };
+        case "up": return { y: -100 * speed };
+        case "down": return { y: 100 * speed };
+        case "left": return { x: -100 * speed };
+        case "right": return { x: 100 * speed };
+        default: return { y: -100 * speed };
       }
     };
 
-    // Set initial state
     gsap.set(element, getInitialTransform());
 
-    // Create animation
     const animation = gsap.to(element, {
       ...getFinalTransform(),
       ease: "none",
@@ -76,9 +62,6 @@ export function useParallax(options: ParallaxOptions = {}) {
         start,
         end,
         scrub,
-        onUpdate: (self) => {
-          // Optional: Add custom logic on scroll update
-        },
       },
     });
 
@@ -90,7 +73,6 @@ export function useParallax(options: ParallaxOptions = {}) {
   return elementRef;
 }
 
-// Hook for fade-in animations with scroll
 export function useFadeIn(options: {
   delay?: number;
   duration?: number;
@@ -115,13 +97,8 @@ export function useFadeIn(options: {
     const element = elementRef.current;
     const triggerElement = trigger ? document.querySelector(trigger) : element;
 
-    // Set initial state
-    gsap.set(element, {
-      opacity: 0,
-      y,
-    });
+    gsap.set(element, { opacity: 0, y });
 
-    // Create animation
     const animation = gsap.to(element, {
       opacity: 1,
       y: 0,
@@ -144,7 +121,6 @@ export function useFadeIn(options: {
   return elementRef;
 }
 
-// Hook for scale animations
 export function useScaleIn(options: {
   delay?: number;
   duration?: number;
@@ -167,13 +143,8 @@ export function useScaleIn(options: {
     const element = elementRef.current;
     const triggerElement = trigger ? document.querySelector(trigger) : element;
 
-    // Set initial state
-    gsap.set(element, {
-      scale,
-      opacity: 0,
-    });
+    gsap.set(element, { scale, opacity: 0 });
 
-    // Create animation
     const animation = gsap.to(element, {
       scale: 1,
       opacity: 1,

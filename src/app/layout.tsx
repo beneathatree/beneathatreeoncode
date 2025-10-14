@@ -4,8 +4,6 @@ import Footer from "../components/Footer";
 import LenisProvider from "../components/LenisProvider";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-
-// Fonts via next/font (fast, subsetting, display:swap)
 import { Figtree, Playfair_Display } from "next/font/google";
 
 const figtree = Figtree({
@@ -27,7 +25,7 @@ export const metadata: Metadata = {
   title: "BeneathATree | Bespoke Software Consultancy",
   description:
     "Bespoke software consultancy for startups, solopreneurs, and enterprises. We build lean MVPs and scalable products.",
-  alternates: { canonical: "https://beneathatree.com/" }, // ← set your real domain
+  alternates: { canonical: "https://beneathatree.com/" },
   openGraph: {
     type: "website",
     url: "https://beneathatree.com/",
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
       "Lean MVPs to enterprise-ready products—secure, scalable, reliable.",
     images: [
       {
-        url: "/og/hero.jpg", // 1200x630 recommended
+        url: "/og/hero.jpg",
         width: 1200,
         height: 630,
         alt: "BeneathATree brand hero",
@@ -79,25 +77,18 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className="no-js"                 // ✅ ensure the class exists so the Script can remove it
-      suppressHydrationWarning          // ✅ avoids a class mismatch warning during hydration
-    >
+    <html lang="en" className="no-js" suppressHydrationWarning>
       <body className={`${figtree.variable} ${playfair.variable} flex flex-col min-h-screen`}>
         <LenisProvider>
           <Navbar />
-          {/* Compensate for fixed header to avoid CLS */}
           <main className="flex-grow">{children}</main>
           <Footer />
         </LenisProvider>
 
-        {/* No-JS fallback for reveal effects (runs before hydration) */}
         <Script id="remove-no-js" strategy="beforeInteractive">
           {`document.documentElement.classList.remove('no-js');`}
         </Script>
 
-        {/* Organization JSON-LD */}
         <Script id="org-jsonld" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -105,13 +96,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             name: "BeneathATree",
             url: "https://beneathatree.com/",
             logo: "https://beneathatree.com/logo.png",
-            sameAs: [
-              "https://www.linkedin.com/company/beneathatree",
-            ],
+            sameAs: ["https://www.linkedin.com/company/beneathatree"],
           })}
         </Script>
 
-        {/* WebSite JSON-LD */}
         <Script id="website-jsonld" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
