@@ -31,22 +31,23 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 shadow-md"
+      className="fixed top-0 left-0 w-full z-50"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.90)",
-        backdropFilter: "blur(6px)",
-        WebkitBackdropFilter: "blur(6px)",
+        backgroundColor: "rgba(255, 255, 255, 0.70)",
+        backdropFilter: "blur(5px)",
+        WebkitBackdropFilter: "blur(5px)",
+        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)", 
       }}
     >
-      <div className="w-full px-5 py-4">
+      <div className="w-full px-4 py-3">
         {/* Top Row: Logo + Desktop Links + Hamburger */}
-        <div className="flex justify-between items-center pl-2">
+        <div className="flex justify-between items-center pl-4">
           {/* Logo */}
           <Link href="/" aria-label="BeneathATree home">
             <Image
               src="/illustrations/batlogo.svg"
               alt="BeneathATree"
-              width={140}
+              width={146}
               height={48}
               className="object-contain"
               priority
@@ -55,7 +56,7 @@ export default function Navbar() {
 
           {/* Desktop Links */}
           <nav
-            className="hidden md:flex space-x-6 items-center pr-2"
+            className="hidden md:flex space-x-6 items-center pr-4"
             aria-label="Primary"
           >
             <Link
