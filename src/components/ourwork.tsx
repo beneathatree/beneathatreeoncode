@@ -53,7 +53,7 @@ export default function OurWork() {
 
   return (
     <section className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-20 pb-24">
-      <h2 className="text-4xl font-figtree font-bold text-[#171717] mb-16 text-center tracking-[-1px]">
+      <h2 className="text-5xl font-figtree font-bold text-[#171717] mb-16 text-center tracking-[-1px]">
         Our Work
       </h2>
 

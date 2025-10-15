@@ -231,7 +231,7 @@ export default function OurPeople() {
       </Script>
 
       <div className="max-w-6xl mx-auto">
-        <h1 className="font-figtree font-bold text-3xl sm:text-4xl lg:text-[50px] text-black text-center tracking-tight mt-[80px] sm:mt-12 mb-8 sm:mb-12">
+        <h1 className="font-figtree font-bold text-4xl sm:text-5xl lg:text-[50px] text-black text-center tracking-tight mt-[80px] sm:mt-12 mb-8 sm:mb-12">
           Our People
         </h1>
 

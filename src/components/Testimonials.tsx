@@ -41,6 +41,10 @@ export default function Testimonials() {
   const [cardsPerPage, setCardsPerPage] = useState(3);
   const [isHovered, setIsHovered] = useState(false);
   const [reduced, setReduced] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
   const total = testimonials.length;
 
   useEffect(() => {
@@ -89,6 +93,82 @@ export default function Testimonials() {
     setStartIndex(i);
   };
 
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging && touchStart) {
+      setTouchEnd(e.targetTouches[0].clientX);
+      const offset = e.targetTouches[0].clientX - touchStart;
+      setDragOffset(offset);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 30;
+    const isRightSwipe = distance < -30;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    setIsDragging(false);
+    setTouchStart(null);
+    setTouchEnd(null);
+    setDragOffset(0);
+  };
+
+  // Mouse drag handlers for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.clientX);
+    setIsDragging(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && touchStart) {
+      setTouchEnd(e.clientX);
+      const offset = e.clientX - touchStart;
+      setDragOffset(offset);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 30;
+    const isRightSwipe = distance < -30;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    setIsDragging(false);
+    setTouchStart(null);
+    setTouchEnd(null);
+    setDragOffset(0);
+  };
+
   return (
     <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
       <div
@@ -114,20 +194,53 @@ export default function Testimonials() {
 
         {/* Cards */}
         <div
-          className="flex gap-5 justify-center items-center overflow-visible"
+          className="flex gap-5 justify-center items-center overflow-visible select-none"
           onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseLeave={() => {
+            setIsHovered(false);
+            setIsDragging(false);
+            setTouchStart(null);
+            setTouchEnd(null);
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          style={{ 
+            cursor: isDragging ? 'grabbing' : 'grab',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none'
+          }}
         >
           <AnimatePresence mode="popLayout">
             {getVisibleTestimonials().map((t, i) => (
               <motion.div
                 key={`${startIndex}-${i}`}
                 initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                animate={{ 
+                  x: isDragging ? dragOffset * 0.3 : 0, 
+                  opacity: 1,
+                  scale: isDragging ? 0.96 : 1,
+                  rotateY: isDragging ? dragOffset * 0.1 : 0,
+                  z: isDragging ? 10 : 0
+                }}
                 exit={{ x: -50, opacity: 0 }}
-                transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                className="w-[326px] h-[456px] p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg"
-                style={{ willChange: "transform" }}
+                transition={{ 
+                  type: "tween", 
+                  ease: isDragging ? "linear" : [0.22, 1, 0.36, 1], 
+                  duration: isDragging ? 0 : 0.6 
+                }}
+                className={`w-[326px] h-[456px] p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg ${
+                  isDragging ? 'shadow-2xl' : 'shadow-sm'
+                }`}
+                style={{ 
+                  willChange: "transform",
+                  boxShadow: isDragging ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : undefined
+                }}
               >
                 <p className="font-figtree font-medium text-[18px] tracking-[-0.7px] leading-[1.5em] text-[#0E0E0E] mb-6">
                   “{t.quote}”
