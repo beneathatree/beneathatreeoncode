@@ -45,7 +45,13 @@ export default function Testimonials() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
   const total = testimonials.length;
+
+  // Carousel configuration
+  const AUTOPLAY_DELAY = 2500; // 2.5 seconds between automatic scrolls
+  const ENABLE_AUTOPLAY = true; // Enable automatic scrolling
+  const ENABLE_LOOP = true; // Enable seamless looping
 
   useEffect(() => {
     const updateCardsPerPage = () => {
@@ -59,18 +65,25 @@ export default function Testimonials() {
     const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
     mq.addEventListener?.("change", onChange);
 
+    // Enhanced autoplay with pause functionality
     const interval = setInterval(() => {
-      if (!isHovered && !reduced) {
-        setStartIndex((prev) => (prev + 1) % total);
+      if (ENABLE_AUTOPLAY && !isHovered && !reduced && !isAutoplayPaused && !isDragging) {
+        setStartIndex((prev) => {
+          if (ENABLE_LOOP) {
+            return (prev + 1) % total;
+          } else {
+            return prev < total - cardsPerPage ? prev + 1 : prev;
+          }
+        });
       }
-    }, 2500);
+    }, AUTOPLAY_DELAY);
 
     return () => {
       window.removeEventListener("resize", updateCardsPerPage);
       clearInterval(interval);
       mq.removeEventListener?.("change", onChange);
     };
-  }, [isHovered, reduced, total]);
+  }, [isHovered, reduced, isAutoplayPaused, isDragging, total, cardsPerPage, ENABLE_AUTOPLAY, ENABLE_LOOP, AUTOPLAY_DELAY]);
 
   const getVisibleTestimonials = () => {
     const visible = [];
@@ -98,6 +111,7 @@ export default function Testimonials() {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
     setIsDragging(true);
+    setIsAutoplayPaused(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -112,6 +126,7 @@ export default function Testimonials() {
     if (!touchStart || !touchEnd) {
       setIsDragging(false);
       setDragOffset(0);
+      setIsAutoplayPaused(false);
       return;
     }
 
@@ -129,6 +144,7 @@ export default function Testimonials() {
     setTouchStart(null);
     setTouchEnd(null);
     setDragOffset(0);
+    setIsAutoplayPaused(false);
   };
 
   // Mouse drag handlers for desktop
@@ -136,6 +152,7 @@ export default function Testimonials() {
     setTouchEnd(null);
     setTouchStart(e.clientX);
     setIsDragging(true);
+    setIsAutoplayPaused(true);
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -150,6 +167,7 @@ export default function Testimonials() {
     if (!touchStart || !touchEnd) {
       setIsDragging(false);
       setDragOffset(0);
+      setIsAutoplayPaused(false);
       return;
     }
 
@@ -167,10 +185,11 @@ export default function Testimonials() {
     setTouchStart(null);
     setTouchEnd(null);
     setDragOffset(0);
+    setIsAutoplayPaused(false);
   };
 
   return (
-    <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
+    <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 pb-8">
       <div
         className="max-w-[1000px] mx-auto relative flex items-center justify-center reveal"
         role="region"
@@ -195,12 +214,17 @@ export default function Testimonials() {
         {/* Cards */}
         <div
           className="flex gap-5 justify-center items-center overflow-visible select-none"
-          onMouseEnter={() => setIsHovered(true)}
+          onMouseEnter={() => {
+            setIsHovered(true);
+            setIsAutoplayPaused(true);
+          }}
           onMouseLeave={() => {
             setIsHovered(false);
+            setIsAutoplayPaused(false);
             setIsDragging(false);
             setTouchStart(null);
             setTouchEnd(null);
+            setDragOffset(0);
           }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -281,8 +305,10 @@ export default function Testimonials() {
           <button
             key={i}
             onClick={() => handleDotClick(i)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-              i === startIndex % total ? "bg-[#171717]" : "bg-[#ccc]"
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === startIndex % total 
+                ? "bg-[#171717] scale-110" 
+                : "bg-[#ccc] hover:bg-[#999]"
             }`}
             aria-label={`Go to testimonial ${i + 1}`}
           />
