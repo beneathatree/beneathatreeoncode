@@ -2,7 +2,6 @@ export default function ContactCta() {
   return (
     <section className="pt-8 pb-16 bg-white text-center">
       <div className="max-w-4xl mx-auto px-4">
-        {/* Main Heading/Text */}
         <h2
           className="
             font-figtree font-bold
@@ -11,18 +10,19 @@ export default function ContactCta() {
             leading-tight
             text-[#42A185]
             mb-6
+            reveal
           "
+          style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
         >
           Don&apos;t fit this bill? Contact us anyway.
           <br />
           We&apos;ll figure it out, together.
         </h2>
 
-        {/* Button */}
         <a
           href="https://calendly.com/rohit-beneathatree/introduction"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener nofollow external"
           className="
             inline-block
             px-6 py-3
@@ -33,8 +33,9 @@ export default function ContactCta() {
             transition-transform duration-200 ease-in-out
             hover:scale-[1.03]
             shadow-md hover:shadow-lg
+            reveal
           "
-          style={{ backgroundColor: "#42A185" }}
+          style={{ backgroundColor: "#42A185", "--reveal-delay": "100ms" } as React.CSSProperties}
         >
           Get in Touch
         </a>

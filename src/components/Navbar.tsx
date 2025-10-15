@@ -31,29 +31,34 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50 shadow-md"
+      className="fixed top-0 left-0 w-full z-50"
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.90)",
-        backdropFilter: menuOpen ? "none" : "blur(8px)",
-        WebkitBackdropFilter: menuOpen ? "none" : "blur(8px)",
+        backgroundColor: "rgba(255, 255, 255, 0.80)",
+        backdropFilter: "blur(5px)",
+        WebkitBackdropFilter: "blur(5px)",
+        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)", 
       }}
     >
-      <div className="w-full px-4 py-4">
+      <div className="w-full px-4 py-3">
         {/* Top Row: Logo + Desktop Links + Hamburger */}
-        <div className="flex justify-between items-center pl-2">
+        <div className="flex justify-between items-center pl-4">
           {/* Logo */}
-          <Link href="/">
+          <Link href="/" aria-label="BeneathATree home">
             <Image
               src="/illustrations/batlogo.svg"
-              alt="Beneathatree Logo"
-              width={140}
+              alt="BeneathATree"
+              width={146}
               height={48}
               className="object-contain"
+              priority
             />
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6 items-center pr-2">
+          <nav
+            className="hidden md:flex space-x-6 items-center pr-4"
+            aria-label="Primary"
+          >
             <Link
               href="/our-people"
               className="font-figtree text-link text-m font-medium"
@@ -63,7 +68,7 @@ export default function Navbar() {
             <a
               href="https://www.upwork.com/agencies/881225776448200704/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener nofollow external"
               className="font-figtree text-link text-m font-medium"
             >
               Us on Upwork
@@ -71,68 +76,32 @@ export default function Navbar() {
             <a
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener nofollow external"
               className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-transform duration-200 ease-in-out hover:scale-[1.03]"
               style={{ backgroundColor: "#42A185" }}
             >
               Schedule a Call
             </a>
-          </div>
+          </nav>
 
           {/* Hamburger */}
           <button
             ref={buttonRef}
             className="md:hidden p-2 rounded focus:outline-none"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-controls="mobile-menu"
+            aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? (
-              <svg
-                width="34"
-                height="34"
-                fill="none"
-                viewBox="0 0 34 34"
-                stroke="#888"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.2}
-                  d="M8 10l18 18M8 28L26 10"
-                />
+              <svg width="34" height="34" fill="none" viewBox="0 0 34 34" stroke="#888">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M8 10l18 18M8 28L26 10" />
               </svg>
             ) : (
-              <svg
-                width="34"
-                height="34"
-                fill="none"
-                viewBox="0 0 34 34"
-                stroke="#888"
-              >
-                <line
-                  x1="8"
-                  y1="11"
-                  x2="26"
-                  y2="11"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-                <line
-                  x1="8"
-                  y1="17"
-                  x2="26"
-                  y2="17"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-                <line
-                  x1="8"
-                  y1="23"
-                  x2="26"
-                  y2="23"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
+              <svg width="34" height="34" fill="none" viewBox="0 0 34 34" stroke="#888">
+                <line x1="8" y1="11" x2="26" y2="11" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="8" y1="17" x2="26" y2="17" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="8" y1="23" x2="26" y2="23" strokeWidth="2.2" strokeLinecap="round" />
               </svg>
             )}
           </button>
@@ -142,48 +111,51 @@ export default function Navbar() {
         <AnimatePresence>
           {menuOpen && (
             <motion.div
+              id="mobile-menu"
               ref={menuRef}
               initial={{ height: 0, opacity: 0, y: -10 }}
               animate={{ height: "auto", opacity: 1, y: 0 }}
               exit={{ height: 0, opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-              className="md:hidden overflow-hidden px-2"
+              className="md:hidden overflow-hidden px-4"
               style={{
-                backgroundColor: "transparent",
-                backdropFilter: "blur(2px)",
-                WebkitBackdropFilter: "blur(2px)",
+                backgroundColor: "rgba(255, 255, 255, 0.00)",
+                backdropFilter: "none",
+                WebkitBackdropFilter: "none",
                 boxShadow: "none",
                 border: "none",
                 willChange: "height, opacity, transform",
               }}
             >
-              <div className="flex flex-col gap-5 pt-4 pb-4">
-                <Link
-                  href="/our-people"
-                  className="font-figtree text-gray-500 text-xl font-medium"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Our People
-                </Link>
-                <a
-                  href="https://www.upwork.com/agencies/881225776448200704/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-figtree text-gray-500 text-xl font-medium"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Us on Upwork
-                </a>
-                <a
-                  href="https://calendly.com/rohit-beneathatree/introduction"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-figtree text-[#4DB898] text-xl font-semibold"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Schedule A Call
-                </a>
-              </div>
+              <nav aria-label="Mobile Primary">
+                <div className="flex flex-col gap-5 pt-4 pb-4">
+                  <Link
+                    href="/our-people"
+                    className="font-figtree text-gray-500 text-xl font-medium"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Our People
+                  </Link>
+                  <a
+                    href="https://www.upwork.com/agencies/881225776448200704/"
+                    target="_blank"
+                    rel="noopener nofollow external"
+                    className="font-figtree text-gray-500 text-xl font-medium"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Us on Upwork
+                  </a>
+                  <a
+                    href="https://calendly.com/rohit-beneathatree/introduction"
+                    target="_blank"
+                    rel="noopener nofollow external"
+                    className="font-figtree text-[#4DB898] text-xl font-semibold"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Schedule A Call
+                  </a>
+                </div>
+              </nav>
             </motion.div>
           )}
         </AnimatePresence>
