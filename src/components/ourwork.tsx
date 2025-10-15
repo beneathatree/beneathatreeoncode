@@ -39,11 +39,11 @@ export default function OurWork() {
     : {
         scale: 1.03,
         y: -4,
-        transition: { type: "spring" as const, stiffness: 400, damping: 28, mass: 0.5 },
+        transition: { type: "spring" as const, stiffness: 600, damping: 35, mass: 0.3 },
       };
 
   const commonCardClasses =
-    "w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu will-change-transform transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
+    "w-full flex-1 flex flex-col items-start text-left gap-6 p-6 rounded-xl border border-black/10 bg-white transform-gpu will-change-transform transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20";
 
   const Logo = ({ src, alt, w = 160, h = 64 }: { src: string; alt: string; w?: number; h?: number }) => (
     <div className="w-full h-28 flex items-center justify-center">
