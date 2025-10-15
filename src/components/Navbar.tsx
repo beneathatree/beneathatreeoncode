@@ -31,12 +31,18 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50"
+      className="fixed top-0 left-0 w-full z-[9999]"
+      data-lenis-prevent
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.80)",
         backdropFilter: "blur(5px)",
         WebkitBackdropFilter: "blur(5px)",
-        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)", 
+        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)",
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+        width: "100vw",
       }}
     >
       <div className="w-full px-2 sm:px-4 py-3">

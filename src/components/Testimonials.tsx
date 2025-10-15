@@ -201,7 +201,7 @@ export default function Testimonials() {
         <button
           aria-label="Previous"
           onClick={handlePrev}
-          className="absolute left-5 bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute left-10 bottom-4 lg:left-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowleft.svg"
@@ -288,7 +288,7 @@ export default function Testimonials() {
         <button
           aria-label="Next"
           onClick={handleNext}
-          className="absolute right-5 bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute right-10 bottom-4 lg:right-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowright.svg"

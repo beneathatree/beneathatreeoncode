@@ -6,6 +6,7 @@ import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
 
+
 export default function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
 

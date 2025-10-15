@@ -79,12 +79,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="no-js" suppressHydrationWarning>
       <body className={`${figtree.variable} ${playfair.variable} flex flex-col min-h-screen`}>
+         {/* ✅ Keep fixed UI out of Lenis */}
+         <Navbar />
         <LenisProvider>
-          <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
         </LenisProvider>
-
         <Script id="remove-no-js" strategy="beforeInteractive">
           {`document.documentElement.classList.remove('no-js');`}
         </Script>
