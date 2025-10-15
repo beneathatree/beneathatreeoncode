@@ -20,6 +20,18 @@ html {
   overflow-x: hidden;
 }
 
+/* Ensure minimum width for very small screens */
+@media (max-width: 320px) {
+  .min-w-280 {
+    min-width: 280px;
+  }
+  
+  /* Prevent horizontal scrolling on very small screens */
+  body {
+    min-width: 280px;
+  }
+}
+
 html.lenis {
   height: auto;
 }

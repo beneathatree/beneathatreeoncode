@@ -166,7 +166,7 @@ export default function HomePage() {
           {/* Row 1 */}
           <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
             <div
-              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl p-0 reveal"
+              className="w-full max-w-[500px] min-w-[280px] rounded-2xl shadow-xl p-0 reveal"
               style={{
                 background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
                 "--reveal-delay": "100ms",
@@ -182,7 +182,7 @@ export default function HomePage() {
             </div>
 
             <div
-              className="w-full sm:max-w-[500px] text-left reveal"
+              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
               style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
             >
               <h2
@@ -233,7 +233,7 @@ export default function HomePage() {
             </div>
 
             <div
-              className="w-full sm:max-w-[500px] text-left reveal"
+              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
               style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
             >
               <h2
@@ -279,7 +279,7 @@ export default function HomePage() {
             </div>
 
             <div
-              className="w-full sm:max-w-[500px] text-left reveal"
+              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
               style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
             >
               <h2

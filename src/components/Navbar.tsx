@@ -39,9 +39,9 @@ export default function Navbar() {
         boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)", 
       }}
     >
-      <div className="w-full px-4 py-3">
+      <div className="w-full px-2 sm:px-4 py-3">
         {/* Top Row: Logo + Desktop Links + Hamburger */}
-        <div className="flex justify-between items-center pl-4">
+        <div className="flex justify-between items-center pl-2 sm:pl-4">
           {/* Logo */}
           <Link href="/" aria-label="BeneathATree home">
             <Image

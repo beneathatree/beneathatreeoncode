@@ -197,23 +197,23 @@ export default function Testimonials() {
         aria-label="Testimonials carousel"
         style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
       >
-        {/* Left Arrow */}
+        {/* Left Arrow - Bottom Left */}
         <button
           aria-label="Previous"
           onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute left-5 bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowleft.svg"
             alt="Previous"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
           />
         </button>
 
         {/* Cards */}
         <div
-          className="flex gap-5 justify-center items-center overflow-visible select-none"
+          className="flex gap-2 sm:gap-5 justify-center items-center overflow-visible select-none w-full"
           onMouseEnter={() => {
             setIsHovered(true);
             setIsAutoplayPaused(true);
@@ -258,7 +258,7 @@ export default function Testimonials() {
                   ease: isDragging ? "linear" : [0.22, 1, 0.36, 1], 
                   duration: isDragging ? 0 : 0.6 
                 }}
-                className={`w-[326px] h-[456px] p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg ${
+                className={`w-full max-w-[326px] min-w-[280px] h-[456px] p-4 sm:p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg ${
                   isDragging ? 'shadow-2xl' : 'shadow-sm'
                 }`}
                 style={{ 
@@ -284,17 +284,17 @@ export default function Testimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow - Bottom Right */}
         <button
           aria-label="Next"
           onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute right-5 bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowright.svg"
             alt="Next"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
           />
         </button>
       </div>
