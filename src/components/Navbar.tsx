@@ -77,7 +77,7 @@ export default function Navbar() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noopener nofollow external"
-              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-transform duration-200 ease-in-out hover:scale-[1.03]"
+              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-lg"
               style={{ backgroundColor: "#42A185" }}
             >
               Schedule a Call

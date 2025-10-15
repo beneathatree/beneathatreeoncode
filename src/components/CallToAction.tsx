@@ -19,7 +19,8 @@ export default function CallToAction() {
         href="https://calendly.com/rohit-beneathatree/introduction"
         target="_blank"
         rel="noopener nofollow external"
-        className="inline-block px-8 py-4 rounded-lg font-figtree font-semibold text-white text-xl transition-transform duration-200 ease-in-out hover:scale-[1.03] shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#42A185] reveal"
+        className="inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-white text-base sm:text-lg md:text-xl
+        transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-lg "
         style={{ 
           backgroundColor: "#42A185",
           "--reveal-delay": "100ms"
