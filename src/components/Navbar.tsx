@@ -6,10 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
+    setIsMounted(true);
+    
     const handler = (event: MouseEvent) => {
       const targetNode = event.target as Node | null;
       if (!targetNode) return;
@@ -83,7 +86,7 @@ export default function Navbar() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noopener nofollow external"
-              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-xl"
               style={{ backgroundColor: "#42A185" }}
             >
               Schedule a Call
@@ -115,7 +118,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         <AnimatePresence>
-          {menuOpen && (
+          {isMounted && menuOpen && (
             <motion.div
               id="mobile-menu"
               ref={menuRef}
