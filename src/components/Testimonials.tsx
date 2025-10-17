@@ -41,7 +41,17 @@ export default function Testimonials() {
   const [cardsPerPage, setCardsPerPage] = useState(3);
   const [isHovered, setIsHovered] = useState(false);
   const [reduced, setReduced] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
   const total = testimonials.length;
+
+  // Carousel configuration
+  const AUTOPLAY_DELAY = 2500; // 2.5 seconds between automatic scrolls
+  const ENABLE_AUTOPLAY = true; // Enable automatic scrolling
+  const ENABLE_LOOP = true; // Enable seamless looping
 
   useEffect(() => {
     const updateCardsPerPage = () => {
@@ -55,18 +65,25 @@ export default function Testimonials() {
     const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
     mq.addEventListener?.("change", onChange);
 
+    // Enhanced autoplay with pause functionality
     const interval = setInterval(() => {
-      if (!isHovered && !reduced) {
-        setStartIndex((prev) => (prev + 1) % total);
+      if (ENABLE_AUTOPLAY && !isHovered && !reduced && !isAutoplayPaused && !isDragging) {
+        setStartIndex((prev) => {
+          if (ENABLE_LOOP) {
+            return (prev + 1) % total;
+          } else {
+            return prev < total - cardsPerPage ? prev + 1 : prev;
+          }
+        });
       }
-    }, 2500);
+    }, AUTOPLAY_DELAY);
 
     return () => {
       window.removeEventListener("resize", updateCardsPerPage);
       clearInterval(interval);
       mq.removeEventListener?.("change", onChange);
     };
-  }, [isHovered, reduced, total]);
+  }, [isHovered, reduced, isAutoplayPaused, isDragging, total, cardsPerPage, ENABLE_AUTOPLAY, ENABLE_LOOP, AUTOPLAY_DELAY]);
 
   const getVisibleTestimonials = () => {
     const visible = [];
@@ -89,8 +106,90 @@ export default function Testimonials() {
     setStartIndex(i);
   };
 
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+    setIsAutoplayPaused(true);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (isDragging && touchStart) {
+      setTouchEnd(e.targetTouches[0].clientX);
+      const offset = e.targetTouches[0].clientX - touchStart;
+      setDragOffset(offset);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      setIsAutoplayPaused(false);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 30;
+    const isRightSwipe = distance < -30;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    setIsDragging(false);
+    setTouchStart(null);
+    setTouchEnd(null);
+    setDragOffset(0);
+    setIsAutoplayPaused(false);
+  };
+
+  // Mouse drag handlers for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.clientX);
+    setIsDragging(true);
+    setIsAutoplayPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && touchStart) {
+      setTouchEnd(e.clientX);
+      const offset = e.clientX - touchStart;
+      setDragOffset(offset);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (!touchStart || !touchEnd) {
+      setIsDragging(false);
+      setDragOffset(0);
+      setIsAutoplayPaused(false);
+      return;
+    }
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 30;
+    const isRightSwipe = distance < -30;
+
+    if (isLeftSwipe) {
+      handleNext();
+    } else if (isRightSwipe) {
+      handlePrev();
+    }
+
+    setIsDragging(false);
+    setTouchStart(null);
+    setTouchEnd(null);
+    setDragOffset(0);
+    setIsAutoplayPaused(false);
+  };
+
   return (
-    <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-24">
+    <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 pb-8">
       <div
         className="max-w-[1000px] mx-auto relative flex items-center justify-center reveal"
         role="region"
@@ -98,36 +197,74 @@ export default function Testimonials() {
         aria-label="Testimonials carousel"
         style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
       >
-        {/* Left Arrow */}
+        {/* Left Arrow - Bottom Left */}
         <button
           aria-label="Previous"
           onClick={handlePrev}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute left-10 bottom-4 lg:left-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowleft.svg"
             alt="Previous"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
           />
         </button>
 
         {/* Cards */}
         <div
-          className="flex gap-5 justify-center items-center overflow-visible"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          className="flex gap-2 sm:gap-5 justify-center items-center overflow-visible select-none w-full"
+          onMouseEnter={() => {
+            setIsHovered(true);
+            setIsAutoplayPaused(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+            setIsAutoplayPaused(false);
+            setIsDragging(false);
+            setTouchStart(null);
+            setTouchEnd(null);
+            setDragOffset(0);
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          style={{ 
+            cursor: isDragging ? 'grabbing' : 'grab',
+            userSelect: 'none',
+            WebkitUserSelect: 'none',
+            MozUserSelect: 'none',
+            msUserSelect: 'none'
+          }}
         >
           <AnimatePresence mode="popLayout">
             {getVisibleTestimonials().map((t, i) => (
               <motion.div
                 key={`${startIndex}-${i}`}
                 initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                animate={{ 
+                  x: isDragging ? dragOffset * 0.3 : 0, 
+                  opacity: 1,
+                  scale: isDragging ? 0.96 : 1,
+                  rotateY: isDragging ? dragOffset * 0.1 : 0,
+                  z: isDragging ? 10 : 0
+                }}
                 exit={{ x: -50, opacity: 0 }}
-                transition={{ type: "tween", ease: "easeInOut", duration: 0.6 }}
-                className="w-[326px] h-[456px] p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg"
-                style={{ willChange: "transform" }}
+                transition={{ 
+                  type: "tween", 
+                  ease: isDragging ? "linear" : [0.22, 1, 0.36, 1], 
+                  duration: isDragging ? 0 : 0.6 
+                }}
+                className={`w-full max-w-[326px] min-w-[280px] h-[456px] p-4 sm:p-6 rounded-xl border border-black/30 bg-[#EDFFFA] flex flex-col justify-between items-center text-center transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.03] hover:-translate-y-1 hover:shadow-lg ${
+                  isDragging ? 'shadow-2xl' : 'shadow-sm'
+                }`}
+                style={{ 
+                  willChange: "transform",
+                  boxShadow: isDragging ? '0 25px 50px -12px rgba(0, 0, 0, 0.25)' : undefined
+                }}
               >
                 <p className="font-figtree font-medium text-[18px] tracking-[-0.7px] leading-[1.5em] text-[#0E0E0E] mb-6">
                   “{t.quote}”
@@ -147,17 +284,17 @@ export default function Testimonials() {
           </AnimatePresence>
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow - Bottom Right */}
         <button
           aria-label="Next"
           onClick={handleNext}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
+          className="absolute right-10 bottom-4 lg:right-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
             src="/illustrations/arrowright.svg"
             alt="Next"
-            width={24}
-            height={24}
+            width={20}
+            height={20}
           />
         </button>
       </div>
@@ -168,8 +305,10 @@ export default function Testimonials() {
           <button
             key={i}
             onClick={() => handleDotClick(i)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-              i === startIndex % total ? "bg-[#171717]" : "bg-[#ccc]"
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              i === startIndex % total 
+                ? "bg-[#171717] scale-110" 
+                : "bg-[#ccc] hover:bg-[#999]"
             }`}
             aria-label={`Go to testimonial ${i + 1}`}
           />

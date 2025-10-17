@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "BeneathATree | Bespoke Software Consultancy",
+  title: "BeneathATree",
   description:
     "Bespoke software consultancy for startups, solopreneurs, and enterprises. We build lean MVPs and scalable products.",
   alternates: { canonical: "https://beneathatree.com/" },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://beneathatree.com/",
     siteName: "BeneathATree",
-    title: "Bespoke Software Consultancy | BeneathATree",
+    title: "BeneathATree",
     description:
       "Lean MVPs to enterprise-ready products—secure, scalable, reliable.",
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bespoke Software Consultancy | BeneathATree",
+    title: "BeneathATree",
     description: "We help founders and teams ship lovable, scalable software.",
     images: ["/og/hero.jpg"],
   },
@@ -79,12 +79,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="no-js" suppressHydrationWarning>
       <body className={`${figtree.variable} ${playfair.variable} flex flex-col min-h-screen`}>
+         {/* ✅ Keep fixed UI out of Lenis */}
+         <Navbar />
         <LenisProvider>
-          <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
         </LenisProvider>
-
         <Script id="remove-no-js" strategy="beforeInteractive">
           {`document.documentElement.classList.remove('no-js');`}
         </Script>

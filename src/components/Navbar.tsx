@@ -31,17 +31,23 @@ export default function Navbar() {
 
   return (
     <header
-      className="fixed top-0 left-0 w-full z-50"
+      className="fixed top-0 left-0 w-full z-[9999]"
+      data-lenis-prevent
       style={{
         backgroundColor: "rgba(255, 255, 255, 0.80)",
         backdropFilter: "blur(5px)",
         WebkitBackdropFilter: "blur(5px)",
-        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)", 
+        boxShadow: "0 1px 4px rgba(0, 0, 0, 0.20)",
+        transform: "translateZ(0)",
+        WebkitTransform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+        WebkitBackfaceVisibility: "hidden",
+        width: "100vw",
       }}
     >
-      <div className="w-full px-4 py-3">
+      <div className="w-full px-2 sm:px-4 py-3">
         {/* Top Row: Logo + Desktop Links + Hamburger */}
-        <div className="flex justify-between items-center pl-4">
+        <div className="flex justify-between items-center pl-2 sm:pl-4">
           {/* Logo */}
           <Link href="/" aria-label="BeneathATree home">
             <Image
@@ -77,7 +83,7 @@ export default function Navbar() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noopener nofollow external"
-              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-transform duration-200 ease-in-out hover:scale-[1.03]"
+              className="px-3 py-2 rounded-md font-figtree font-medium text-white text-m transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-lg"
               style={{ backgroundColor: "#42A185" }}
             >
               Schedule a Call

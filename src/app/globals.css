@@ -20,6 +20,18 @@ html {
   overflow-x: hidden;
 }
 
+/* Ensure minimum width for very small screens */
+@media (max-width: 320px) {
+  .min-w-280 {
+    min-width: 280px;
+  }
+  
+  /* Prevent horizontal scrolling on very small screens */
+  body {
+    min-width: 280px;
+  }
+}
+
 html.lenis {
   height: auto;
 }
@@ -151,3 +163,46 @@ body {
     filter: none !important;
   }
 }
+
+/* Navbar isolation - prevent any movement from other animations */
+header[data-lenis-prevent] {
+  transform: translate3d(0, 0, 0) !important;
+  will-change: auto !important;
+  contain: layout style paint !important;
+  isolation: isolate !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+/* Prevent any reveal animations from affecting the navbar */
+header[data-lenis-prevent] * {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Specifically target the hamburger button */
+header[data-lenis-prevent] button {
+  transform: none !important;
+  will-change: auto !important;
+  isolation: isolate !important;
+}
+
+/* Prevent any global scroll effects from affecting the navbar */
+header[data-lenis-prevent],
+header[data-lenis-prevent] * {
+  transform: none !important;
+  animation: none !important;
+  transition: none !important;
+  will-change: auto !important;
+}
+
+/* Override any global CSS custom properties that might affect the navbar */
+header[data-lenis-prevent] {
+  --scroll-y: 0px !important;
+  --reveal-delay: 0ms !important;
+}
+
