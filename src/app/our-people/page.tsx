@@ -124,11 +124,22 @@ const people: Person[] = [
     img: "/people/sachin.jpg",
     socials: [{ platform: "linkedin", url: "https://www.linkedin.com/in/sachin-phatak/" }],
   },
-  { name: "Sagar", role: "Operations Manager", img: "/people/sagar.jpg" },
+  {
+    name: "Sagar",
+    role: "Operations Manager",
+    img: "/people/sagar.jpg",
+    socials: [
+      { platform: "linkedin", url: "https://www.linkedin.com/in/sagar-r-thalavar-developer-gpti/" },
+      { platform: "instagram", url: "https://www.instagram.com/otziburl/" },
+    ],
+  },
   {
     name: "Shabeera",
     role: "Full-Stack Developer",
     img: "/people/shabeera.jpg",
+    socials: [
+      { platform: "linkedin", url: "https://www.linkedin.com/in/shaik-shabeera-begum-9805661b7/" },
+    ],
   },
   {
     name: "Sharikh",
