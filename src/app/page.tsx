@@ -8,12 +8,9 @@ import CallToAction from "../components/CallToAction";
 
 
 export default function HomePage() {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Page-load entrance + parallax variable
+ // Page-load entrance + parallax variable
   useEffect(() => {
     const t = requestAnimationFrame(() => {
-      setIsLoaded(true);
       // Add a document-level flag so CSS can trigger entrance animations
       document.documentElement.classList.add("is-loaded");
     });
@@ -111,10 +108,10 @@ export default function HomePage() {
                 love and precision.
               </p>
               <p className="mb-2">
-                It doesn't matter whether you're a solopreneur, startup or
+                It doesn&apos;t matter whether you&apos;re a solopreneur, startup or
                 enterprise.
               </p>
-              <p className="font-bold mb-4">We'll play the long game, with you.</p>
+              <p className="font-bold mb-4">We&apos;ll play the long game, with you.</p>
             </div>
 
             {/* CTA */}
@@ -143,7 +140,7 @@ export default function HomePage() {
                 "transform 0.2s ease-out, opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
-            <img
+            <Image
               src="/illustrations/hero.svg"
               alt="Batstory Illustration"
               className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px] 3xl:min-h-[520px]"
@@ -258,7 +255,7 @@ export default function HomePage() {
           text-[#888888]
         "
               >
-                Already have engineers? We’ll complement your team on specific
+                Already have engineers? We&apos;ll complement your team on specific
                 projects, freeing them to focus on what they do best.
               </p>
             </div>

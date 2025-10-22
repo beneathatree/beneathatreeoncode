@@ -93,8 +93,7 @@ export default function OurWork() {
             <Logo src="/illustrations/uplift.svg" alt="Uplift logo" w={160} h={64} />
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">Uplift</h3>
             <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
-              Optimizing human movement & performance
-              <br />
+              Optimizing human movement & performance <br />
               with AI-powered insights.
             </p>
           </motion.a>
