@@ -135,9 +135,9 @@ export default function Testimonials() {
     const isRightSwipe = distance < -30;
 
     if (isLeftSwipe) {
-      handleNext();
-    } else if (isRightSwipe) {
       handlePrev();
+    } else if (isRightSwipe) {
+      handleNext();
     }
 
     setIsDragging(false);
@@ -176,9 +176,9 @@ export default function Testimonials() {
     const isRightSwipe = distance < -30;
 
     if (isLeftSwipe) {
-      handleNext();
-    } else if (isRightSwipe) {
       handlePrev();
+    } else if (isRightSwipe) {
+      handleNext();
     }
 
     setIsDragging(false);
