@@ -12,7 +12,7 @@ export default function CallToAction() {
         className="text-3xl sm:text-4xl md:text-5xl font-figtree font-bold leading-tight text-[#42A185] mb-5 reveal"
         style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
       >
-        Let's build great products, together.
+        Let&apos;s build great products, together.
       </h2>
 
       <a
