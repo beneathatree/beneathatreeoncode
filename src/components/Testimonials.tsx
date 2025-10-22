@@ -201,6 +201,14 @@ export default function Testimonials() {
         <button
           aria-label="Previous"
           onClick={handlePrev}
+          onMouseEnter={() => {
+            setIsHovered(true);
+            setIsAutoplayPaused(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+            setIsAutoplayPaused(false);
+          }}
           className="absolute left-10 bottom-4 lg:left-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image
@@ -288,6 +296,14 @@ export default function Testimonials() {
         <button
           aria-label="Next"
           onClick={handleNext}
+          onMouseEnter={() => {
+            setIsHovered(true);
+            setIsAutoplayPaused(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+            setIsAutoplayPaused(false);
+          }}
           className="absolute right-10 bottom-4 lg:right-5 lg:bottom-5 z-10 w-10 h-10 flex items-center justify-center bg-black opacity-20 border border-black/10 rounded-full shadow hover:scale-105 transition-transform"
         >
           <Image

@@ -143,6 +143,8 @@ export default function HomePage() {
             <Image
               src="/illustrations/hero.svg"
               alt="Batstory Illustration"
+              width={800}
+              height={600}
               className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px] 3xl:min-h-[520px]"
               draggable="false"
             />
