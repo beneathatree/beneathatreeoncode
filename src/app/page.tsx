@@ -132,7 +132,7 @@ export default function HomePage() {
 
           {/* Hero Illustration */}
           <div
-            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-0 left-0 w-full z-0 overflow-visible fade-seq-hero"
+            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-0 2xl:bottom-0 3xl:bottom-0 min-[2000px]:bottom-0 left-0 w-full z-0 overflow-visible fade-seq-hero"
             style={{
               animationDelay: "300ms",
               transform: "translateY(calc(var(--scroll-y, 0px) * -0.1))",
@@ -145,7 +145,7 @@ export default function HomePage() {
               alt="Batstory Illustration"
               width={800}
               height={600}
-              className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px] 3xl:min-h-[520px]"
+              className="w-full animate-float object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px]"
               draggable="false"
             />
           </div>
