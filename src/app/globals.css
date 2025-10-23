@@ -95,8 +95,8 @@ body {
 }
 /* --- Page-load entrance (hero only) --- */
 :root {
-  --enter-duration: 400ms;
-  --enter-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --enter-duration: 800ms;
+  --enter-ease: cubic-bezier(0.12, 1, 0.25, 1);
 }
 
 /* Generic fade-up with a tiny blur & scale settle */
@@ -150,7 +150,7 @@ body {
 }
 
 .is-loaded .fade-seq-hero {
-  animation: fadeInRiseHero 1100ms var(--enter-ease) both;
+  animation: fadeInRiseHero 1800ms var(--enter-ease) both;
 }
 
 /* Respect reduced motion */
@@ -205,4 +205,3 @@ header[data-lenis-prevent] {
   --scroll-y: 0px !important;
   --reveal-delay: 0ms !important;
 }
-
