@@ -5,6 +5,7 @@ import ContactCta from "../components/ContactCta";
 import OurWork from "../components/ourwork";
 import Testimonials from "../components/Testimonials";
 import CallToAction from "../components/CallToAction";
+import ClientCategories from "../components/ClientCategories";
 
 
 export default function HomePage() {
@@ -108,15 +109,15 @@ export default function HomePage() {
       <div
         className="w-full overflow-x-hidden bg-white"
         style={{
-          background:
-            "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 40%, #fdfdfd 60%, #ffffff 100%)",
+          backgroundImage:
+            "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 80%, #A1E0C7 100%)",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "scroll",
           backgroundSize: "cover",
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-[72px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px]">
+        <section className="relative text-white overflow-hidden pt-[72px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px] lg:pb-[450px] xl:pb-[500px] 2xl:pb-[550px]">
           <div
             className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center"
           >
@@ -184,7 +185,7 @@ export default function HomePage() {
           {/* Hero Illustration */}
           <div
             ref={heroRef}
-            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-0 2xl:bottom-0 3xl:bottom-0 min-[2000px]:bottom-0 left-0 w-full z-0 overflow-visible fade-seq-hero"
+            className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-[100px] 3xl:bottom-[120px] min-[2000px]:bottom-[140px] left-0 w-full z-0 overflow-visible fade-seq-hero"
             style={{
               animationDelay: "300ms",
               transition: "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
@@ -195,177 +196,17 @@ export default function HomePage() {
               alt="Batstory Illustration"
               width={800}
               height={600}
-              className="w-full object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[420px] 2xl:min-h-[480px]"
+              className="w-full object-fill min-h-[200px] sm:min-h-[280px] md:min-h-[360px] lg:min-h-[400px] xl:min-h-[450px] 2xl:min-h-[500px] 3xl:min-h-[550px] min-[2000px]:min-h-[600px]"
               draggable="false"
             />
           </div>
         </section>
-
-        {/* Cards Section — Alternating Layout */}
-        <section
-          className="
-    relative
-    text-white
-    overflow-hidden
-    pt-[100px] sm:pt-[80px] md:pt-[100px]
-    pb-[40px] sm:pb-[60px] md:pb-[80px]
-    space-y-16
-    px-4        /* horizontal gutter on mobile */
-  "
-        >
-          {/* Row 1 */}
-          <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
-            <div
-              className="w-full max-w-[500px] min-w-[280px] rounded-2xl shadow-xl p-0 reveal"
-              style={{
-                background: "linear-gradient(to bottom, #85D9BE 4%, #ffffff 100%)",
-                "--reveal-delay": "100ms",
-              } as React.CSSProperties}
-            >
-              <Image
-                src="/illustrations/early.svg"
-                alt="Early stage startups illustration"
-                width={500}
-                height={240}
-                className="rounded-2xl object-contain w-full h-auto"
-              />
-            </div>
-
-            <div
-              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-              style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
-            >
-              <h2
-                className="
-          font-figtree font-bold
-          text-[32px] sm:text-[40px] md:text-[50px]
-          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
-          leading-[1.2em]
-          text-[#171717]
-          mb-4
-        "
-              >
-                Early-stage startups
-                <br />
-                and Solopreneurs
-              </h2>
-              <p
-                className="
-          font-figtree font-semibold
-          text-[16px] sm:text-[19px] md:text-[21px]
-          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
-          leading-[1.4em]
-          text-[#888888]
-        "
-              >
-                We&apos;ll build a lean MVP to help you reach the market.
-                <br />
-                Once validated, we&apos;ll make sure your product grows-
-                <br />
-                while being secure, scalable, and reliable.
-              </p>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto">
-            <div
-              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-              style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
-            >
-              <Image
-                src="/illustrations/funded.svg"
-                alt="Funded startups illustration"
-                width={500}
-                height={240}
-                className="rounded-2xl object-contain w-full h-auto"
-              />
-            </div>
-
-            <div
-              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-              style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
-            >
-              <h2
-                className="
-          font-figtree font-bold
-          text-[32px] sm:text-[40px] md:text-[50px]
-          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
-          leading-[1.2em]
-          text-[#171717]
-          mb-4
-        "
-              >
-                Funded startups
-              </h2>
-              <p
-                className="
-          font-figtree font-semibold
-          text-[16px] sm:text-[19px] md:text-[21px]
-          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
-          leading-[1.4em]
-          text-[#888888]
-        "
-              >
-                Already have engineers? We&apos;ll complement your team on specific
-                projects, freeing them to focus on what they do best.
-              </p>
-            </div>
-          </div>
-
-          {/* Row 3 */}
-          <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
-            <div
-              className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-              style={{ "--reveal-delay": "340ms" } as React.CSSProperties}
-            >
-              <Image
-                src="/illustrations/established.svg"
-                alt="Enterprise teams illustration"
-                width={500}
-                height={240}
-                className="rounded-2xl object-contain w-full h-auto"
-              />
-            </div>
-
-            <div
-              className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-              style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
-            >
-              <h2
-                className="
-          font-figtree font-bold
-          text-[32px] sm:text-[40px] md:text-[50px]
-          tracking-[-1.5px] sm:tracking-[-1.8px] md:tracking-[-2.1px]
-          leading-[1.2em]
-          text-[#171717]
-          mb-4
-        "
-              >
-                Established businesses
-                <br />
-                and Enterprises
-              </h2>
-              <p
-                className="
-          font-figtree font-semibold
-          text-[15.7px] sm:text-[19px] md:text-[21px]
-          tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
-          leading-[1.4em]
-          text-[#888888]
-        "
-              >
-                Have an idea to boost efficiency or disrupt your industry?
-                <br />
-                We&apos;ll craft a lean, lovable product and smoothly transition
-                it to your team.
-              </p>
-            </div>
-          </div>
-        </section>
       </div>
 
-      {/* New components outside gradient */}
+      {/* Client Categories - Clean white background */}
+      <ClientCategories />
+
+      {/* Other components */}
       <ContactCta />
       <OurWork />
       <Testimonials />
