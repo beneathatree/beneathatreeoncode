@@ -28,7 +28,7 @@ export default function HomePage() {
         heroRef.current.style.animation = 'none';
         heroRef.current.style.opacity = '1';
       }
-    }, 1200);
+    }, 1500);
 
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
@@ -124,7 +124,7 @@ export default function HomePage() {
             {/* Title */}
             <h1
               className="text-center mb-2 px-4 sm:px-6 md:px-8 fade-seq"
-              style={{ animationDelay: "150ms" }}
+              style={{ animationDelay: "200ms" }}
             >
               {/* Mobile */}
               <span className="block sm:hidden">
@@ -153,7 +153,7 @@ export default function HomePage() {
             {/* Supporting Sentences */}
             <div
               className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] fade-seq"
-              style={{ animationDelay: "200ms" }}
+              style={{ animationDelay: "400ms" }}
             >
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with
@@ -171,11 +171,11 @@ export default function HomePage() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 hover:shadow-xl fade-seq"
+              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 hover:shadow-xl fade-seq"
               style={{
                 backgroundColor: "#fff",
                 color: "#3A8C70",
-                animationDelay: "250ms",
+                animationDelay: "600ms",
               } as React.CSSProperties}
             >
               Schedule a Call
@@ -187,8 +187,8 @@ export default function HomePage() {
             ref={heroRef}
             className="absolute bottom-0 sm:bottom-[20px] md:bottom-[40px] lg:bottom-[60px] xl:bottom-[80px] 2xl:bottom-[100px] 3xl:bottom-[120px] min-[2000px]:bottom-[140px] left-0 w-full z-0 overflow-visible fade-seq-hero"
             style={{
-              animationDelay: "300ms",
-              transition: "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+              animationDelay: "800ms",
+              transition: "opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             <Image
