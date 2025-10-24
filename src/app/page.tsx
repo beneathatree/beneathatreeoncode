@@ -109,8 +109,8 @@ export default function HomePage() {
       <div
         className="w-full overflow-x-hidden bg-white"
         style={{
-          background:
-            "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 40%, #fdfdfd 60%, #ffffff 100%)",
+          backgroundImage:
+            "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 80%, #A1E0C7 100%)",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "scroll",
           backgroundSize: "cover",
@@ -201,12 +201,12 @@ export default function HomePage() {
             />
           </div>
         </section>
-
-        {/* Cards Section — Alternating Layout */}
-        <ClientCategories />
       </div>
 
-      {/* New components outside gradient */}
+      {/* Client Categories - Clean white background */}
+      <ClientCategories />
+
+      {/* Other components */}
       <ContactCta />
       <OurWork />
       <Testimonials />
