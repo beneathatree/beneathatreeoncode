@@ -20,9 +20,9 @@ export default function ClientCategories() {
       {/* Row 1 */}
       <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
         <div
-          className="w-full max-w-[500px] min-w-[280px] rounded-2xl p-0 reveal md:shadow-xl"
+          className="w-full max-w-[500px] min-w-[280px] rounded-2xl p-0 reveal shadow-xl"
           style={{
-            background: "linear-gradient(to bottom, #A1E0C7 0%, #B8E6D1 10%, #ffffff 100%)",
+            background: "linear-gradient(to bottom, #B0E4CE%, #ffffff 100%)",
             "--reveal-delay": "100ms",
           } as React.CSSProperties}
         >
