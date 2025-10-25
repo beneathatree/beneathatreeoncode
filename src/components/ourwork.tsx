@@ -79,7 +79,7 @@ export default function OurWork() {
         viewport={{ once: true, margin: "-10% 0% -10% 0%" }}
       >
         {/* 1. Top Row */}
-        <div className="flex flex-col md:flex-row justify-center gap-8">
+        <div className="flex flex-col md:flex-row justify-center gap-10">
           {/* Uplift Card */}
           <motion.a
             href="https://www.uplift.ai/"
@@ -92,7 +92,7 @@ export default function OurWork() {
           >
             <Logo src="/illustrations/uplift.svg" alt="Uplift logo" w={160} h={64} />
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">Uplift</h3>
-            <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
+            <p className="font-figtree font-medium text-base leading-snug text-[#888888] -mt-4">
               Optimizing human movement & performance <br />
               with AI-powered insights.
             </p>
@@ -110,7 +110,7 @@ export default function OurWork() {
           >
             <Logo src="/illustrations/digifarm.svg" alt="DigiFarm logo" w={180} h={64} />
             <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">DigiFarm</h3>
-            <p className="font-figtree font-medium text-base leading-snug text-[#888888]">
+            <p className="font-figtree font-medium text-base leading-snug text-[#888888] -mt-4">
               Develop deep neural network models and agtech solutions for
               accurately detecting field boundaries and seeded acres in precision farming.
             </p>
@@ -129,7 +129,7 @@ export default function OurWork() {
         >
           <Logo src="/illustrations/speak2.svg" alt="Speak2 logo" w={160} h={64} />
           <h3 className="font-figtree font-bold text-2xl text-[#171717] mt-4">Speak2</h3>
-          <p className="font-figtree font-medium text-base leading-snug text-[#888888]">Revolutionize senior living.</p>
+          <p className="font-figtree font-medium text-base leading-snug text-[#888888] -mt-4">Revolutionize senior living.</p>
         </motion.a>
       </motion.div>
     </section>
