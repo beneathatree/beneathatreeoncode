@@ -110,14 +110,14 @@ export default function HomePage() {
         className="w-full overflow-x-hidden bg-white"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, #55C1A0 0%, #55C1A0 80%, #A1E0C7 100%)",
+            "linear-gradient(to bottom, #4DB898 0%, #4DB898 80%, #A1E0C7 100%)",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "scroll",
           backgroundSize: "cover",
         }}
       >
         {/* Hero Section */}
-        <section className="relative text-white overflow-hidden pt-[72px] md:pt-[80px] pb-[250px] sm:pb-[350px] md:pb-[400px] lg:pb-[450px] xl:pb-[500px] 2xl:pb-[550px]">
+        <section className="relative text-white overflow-hidden pt-[82px] md:pt-[110px] pb-[250px] sm:pb-[350px] md:pb-[400px] lg:pb-[450px] xl:pb-[500px] 2xl:pb-[550px]">
           <div
             className="relative z-30 max-w-screen-xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 pt-16 md:pt-20 flex flex-col items-center"
           >
@@ -141,10 +141,10 @@ export default function HomePage() {
 
               {/* Larger screens */}
               <span className="hidden sm:block">
-                <div className="font-playfair font-semibold italic text-[60px] md:text-[70px] xl:text-[80px] leading-[0.6em] tracking-[-3.8px] text-center">
+                <div className="font-playfair font-semibold italic text-[70px] md:text-[80px] xl:text-[90px] leading-[0.6em] tracking-[-3.8px] text-center">
                   Bespoke
                 </div>
-                <div className="font-figtree font-extrabold text-[50px] md:text-[60px] xl:text-[70px] tracking-[-3.8px] text-center mt-2">
+                <div className="font-figtree font-extrabold text-[60px] md:text-[70px] xl:text-[80px] tracking-[-3.8px] text-center mt-2">
                   Software Consultancy
                 </div>
               </span>
@@ -152,18 +152,18 @@ export default function HomePage() {
 
             {/* Supporting Sentences */}
             <div
-              className="mt-4 max-w-[1000px] mx-auto text-center text-[18px] sm:text-[22px] md:text-[24px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] fade-seq"
+              className="mt-6 max-w-[1000px] mx-auto text-center text-[21px] sm:text-[24px] md:text-[27px] font-figtree font-medium text-white leading-[1em] tracking-[-0.8px] fade-seq"
               style={{ animationDelay: "400ms" }}
             >
               <p className="mb-2">
                 Transform your expertise into thoughtful products, built with
                 love and precision.
               </p>
-              <p className="mb-2">
+              <p className="mb-5">
                 It doesn&apos;t matter whether you&apos;re a solopreneur, startup or
                 enterprise.
               </p>
-              <p className="font-bold mb-4">We&apos;ll play the long game, with you.</p>
+              <p className="font-bold mb-6">We&apos;ll play the long game, with you.</p>
             </div>
 
             {/* CTA */}
@@ -171,7 +171,7 @@ export default function HomePage() {
               href="https://calendly.com/rohit-beneathatree/introduction"
               target="_blank"
               rel="noreferrer"
-              className="mt-0 inline-block px-4 py-2 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 hover:shadow-xl fade-seq"
+              className="mt-0 inline-block px-6 py-3 rounded-lg font-figtree font-semibold text-base sm:text-lg md:text-xl shadow-md transition-all duration-400 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 hover:shadow-xl fade-seq"
               style={{
                 backgroundColor: "#fff",
                 color: "#3A8C70",

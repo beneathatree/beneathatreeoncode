@@ -14,16 +14,15 @@ export default function ClientCategories() {
         px-4        /* horizontal gutter on mobile */
       "
       style={{
-        background: "linear-gradient(to bottom, #A1E0C7 0%, #B8E6D1 10%, #ffffff 30%)",
+        background: "linear-gradient(to bottom, #A1E0C7 0%, #B8E6D1 10%, #ffffff 35%)",
       }}
     >
       {/* Row 1 */}
-      <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
+      <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
         <div
-          className="w-full max-w-[500px] min-w-[280px] rounded-2xl p-0 reveal shadow-xl"
+          className="w-full max-w-[500px] min-w-[280px] rounded-2xl p-0 shadow-xl"
           style={{
             background: "linear-gradient(to bottom, #B0E4CE%, #ffffff 100%)",
-            "--reveal-delay": "100ms",
           } as React.CSSProperties}
         >
           <Image
@@ -36,8 +35,7 @@ export default function ClientCategories() {
         </div>
 
         <div
-          className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-          style={{ "--reveal-delay": "160ms" } as React.CSSProperties}
+          className="w-full max-w-[500px] min-w-[280px] text-left"
         >
           <h2
             className="
@@ -56,26 +54,23 @@ export default function ClientCategories() {
           <p
             className="
               font-figtree font-semibold
-              text-[16px] sm:text-[19px] md:text-[21px]
+              text-[18px] sm:text-[20px] md:text-[21px]
               tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
               leading-[1.4em]
               text-[#888888]
             "
           >
-            We&apos;ll build a lean MVP to help you reach the market.
-            <br />
-            Once validated, we&apos;ll make sure your product grows-
-            <br />
+            We&apos;ll build a lean MVP to help you reach the market.  
+            Once validated, we&apos;ll make sure your product grows
             while being secure, scalable, and reliable.
           </p>
         </div>
       </div>
 
       {/* Row 2 */}
-      <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto">
+      <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "220ms" } as React.CSSProperties}>
         <div
-          className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-          style={{ "--reveal-delay": "220ms" } as React.CSSProperties}
+          className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0"
         >
           <Image
             src="/illustrations/funded.svg"
@@ -87,8 +82,7 @@ export default function ClientCategories() {
         </div>
 
         <div
-          className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-          style={{ "--reveal-delay": "280ms" } as React.CSSProperties}
+          className="w-full max-w-[500px] min-w-[280px] text-left"
         >
           <h2
             className="
@@ -105,7 +99,7 @@ export default function ClientCategories() {
           <p
             className="
               font-figtree font-semibold
-              text-[16px] sm:text-[19px] md:text-[21px]
+              text-[18px] sm:text-[20px] md:text-[21px]
               tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
               leading-[1.4em]
               text-[#888888]
@@ -118,10 +112,9 @@ export default function ClientCategories() {
       </div>
 
       {/* Row 3 */}
-      <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto">
+      <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "340ms" } as React.CSSProperties}>
         <div
-          className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0 reveal"
-          style={{ "--reveal-delay": "340ms" } as React.CSSProperties}
+          className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0"
         >
           <Image
             src="/illustrations/established.svg"
@@ -133,8 +126,7 @@ export default function ClientCategories() {
         </div>
 
         <div
-          className="w-full max-w-[500px] min-w-[280px] text-left reveal"
-          style={{ "--reveal-delay": "400ms" } as React.CSSProperties}
+          className="w-full max-w-[500px] min-w-[280px] text-left"
         >
           <h2
             className="
@@ -153,14 +145,13 @@ export default function ClientCategories() {
           <p
             className="
               font-figtree font-semibold
-              text-[15.7px] sm:text-[19px] md:text-[21px]
+              text-[18px] sm:text-[20px] md:text-[21px]
               tracking-[-0.5px] sm:tracking-[-0.6px] md:tracking-[-0.7px]
               leading-[1.4em]
               text-[#888888]
             "
           >
             Have an idea to boost efficiency or disrupt your industry?
-            <br />
             We&apos;ll craft a lean, lovable product and smoothly transition
             it to your team.
           </p>

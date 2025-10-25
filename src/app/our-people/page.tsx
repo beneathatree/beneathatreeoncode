@@ -251,11 +251,11 @@ export default function OurPeople() {
             const Card = (
               <div
                 className="overflow-hidden rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:scale-[1.03] hover:ring-1 hover:ring-[#D0EAE2]
-                transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-full max-w-sm mx-auto bg-white"
-                style={{ height: 420 }}
+                transform-gpu transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] w-full max-w-xs sm:max-w-sm mx-auto bg-white"
+                style={{ height: 470 }}
               >
                 {/* Image block: fixed-height container to avoid CLS */}
-                <div className="relative w-full" style={{ height: 265 }}>
+                <div className="relative w-full" style={{ height: 313 }}>
                   <Image
                     src={person.img}
                     alt={`${person.name} — ${person.role}`}
@@ -268,7 +268,7 @@ export default function OurPeople() {
 
                 <div
                   className="flex flex-col justify-between items-start px-4 sm:px-6 pt-4 pb-4 bg-white rounded-b-lg"
-                  style={{ height: 155 }}
+                  style={{ height: 157 }}
                 >
                   <div>
                     <h2 className="font-figtree font-semibold text-2xl sm:text-3xl lg:text-[40px] text-black leading-none tracking-tight">
@@ -280,14 +280,14 @@ export default function OurPeople() {
                   </div>
 
                   {person.socials && (
-                    <div className="flex gap-3 mt-4">
+                    <div className="flex gap-4 mt-4">
                       {person.socials.map((link, i) => (
                         <a
                           key={i}
                           href={link.url}
                           target="_blank"
                           rel="noopener nofollow external"
-                          className="w-8 h-8 rounded-full bg-[#EAEAEA] flex items-center justify-center"
+                          className="w-8 h-8 rounded-full bg-[#EAEAEA] flex items-center justify-center hover:bg-[#D0D0D0] hover:scale-102 transition-all duration-150 ease-out"
                           aria-label={`${person.name} on ${link.platform}`}
                         >
                           <Image

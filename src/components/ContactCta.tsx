@@ -5,7 +5,7 @@ export default function ContactCta() {
         <h2
           className="
             font-figtree font-bold
-            text-4xl sm:text-5xl md:text-5xl
+            text-3xl sm:text-5xl md:text-5xl lg:text-5xl
             tracking-[-1px]
             leading-tight
             text-[#42A185]
@@ -14,8 +14,8 @@ export default function ContactCta() {
           "
           style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
         >
-          Don&apos;t fit this bill? Contact us anyway.
-          <br />
+          Don&apos;t fit this bill?<br />
+          Contact us anyway.<br />
           We&apos;ll figure it out, together.
         </h2>
 
@@ -25,7 +25,7 @@ export default function ContactCta() {
           rel="noopener nofollow external"
           className="
             inline-block
-            px-4 py-2
+            px-6 py-3
             rounded-lg
             font-figtree font-semibold
             text-white
