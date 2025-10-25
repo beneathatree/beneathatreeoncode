@@ -25,7 +25,7 @@ export default function ContactCta() {
           rel="noopener nofollow external"
           className="
             inline-block
-            px-4 py-2
+            px-6 py-3
             rounded-lg
             font-figtree font-semibold
             text-white
