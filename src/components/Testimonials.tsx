@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion, useInView } from "framer-motion";
 
 const testimonials = [
   {
@@ -47,6 +47,35 @@ export default function Testimonials() {
   const [dragOffset, setDragOffset] = useState(0);
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
   const total = testimonials.length;
+  const reducedMotion = useReducedMotion();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dotsRef = useRef<HTMLDivElement>(null);
+  const isContainerInView = useInView(containerRef, { once: true, margin: "0px" });
+  const isDotsInView = useInView(dotsRef, { once: true, margin: "0px" });
+
+  const container = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
+  const dots = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.9,
+        delay: 0.2,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
 
   // Carousel configuration
   const AUTOPLAY_DELAY = 2500; // 2.5 seconds between automatic scrolls
@@ -190,12 +219,16 @@ export default function Testimonials() {
 
   return (
     <section className="bg-[#EDFFFA] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-24 pb-8">
-      <div
-        className="max-w-[1000px] mx-auto relative flex items-center justify-center reveal"
+      <motion.div
+        ref={containerRef}
+        className="max-w-[1000px] mx-auto relative flex items-center justify-center"
         role="region"
         aria-live="polite"
         aria-label="Testimonials carousel"
-        style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
+        variants={reducedMotion ? {} : container}
+        initial={isContainerInView ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px 0% -100px 0%" }}
       >
         {/* Left Arrow - Bottom Left */}
         <button
@@ -313,10 +346,17 @@ export default function Testimonials() {
             height={20}
           />
         </button>
-      </div>
+      </motion.div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-6 space-x-2 reveal" style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
+      <motion.div 
+        ref={dotsRef}
+        className="flex justify-center mt-6 space-x-2"
+        variants={reducedMotion ? {} : dots}
+        initial={isDotsInView ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px 0% -100px 0%" }}
+      >
         {testimonials.map((_, i) => (
           <button
             key={i}
@@ -329,7 +369,7 @@ export default function Testimonials() {
             aria-label={`Go to testimonial ${i + 1}`}
           />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
