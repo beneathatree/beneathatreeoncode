@@ -1,4 +1,39 @@
+"use client";
+import { useRef } from "react";
+import { motion, useReducedMotion, useInView } from "framer-motion";
+
 export default function CallToAction() {
+  const reduced = useReducedMotion();
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+  const isHeadingInView = useInView(headingRef, { once: true, margin: "0px" });
+  const isButtonInView = useInView(buttonRef, { once: true, margin: "0px" });
+
+  const heading = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
+  const button = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.9,
+        delay: 0.2,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
   return (
     <section
       id="contact"
@@ -7,28 +42,37 @@ export default function CallToAction() {
       style={{ backgroundColor: "#EDFFFA" }}
       role="region"
     >
-      <h2
+      <motion.h2
+        ref={headingRef}
         id="cta-title"
-        className="text-3xl sm:text-4xl md:text-5xl font-figtree font-bold leading-tight text-[#42A185] mb-5 reveal"
-        style={{ "--reveal-delay": "0ms" } as React.CSSProperties}
+        variants={reduced ? {} : heading}
+        initial={isHeadingInView ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px 0% -100px 0%" }}
+        className="text-3xl sm:text-4xl md:text-5xl font-figtree font-bold leading-tight text-[#42A185] mb-5"
       >
         Let&apos;s build great products, together.
-      </h2>
+      </motion.h2>
 
-      <a
+      <motion.a
+        ref={buttonRef}
         href="https://calendly.com/rohit-beneathatree/introduction"
         target="_blank"
         rel="noopener nofollow external"
+        variants={reduced ? {} : button}
+        initial={isButtonInView ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, margin: "-100px 0% -100px 0%" }}
+        whileHover={{ scale: 1.05, y: -2 }}
         className="inline-block px-6 py-3 rounded-lg font-figtree font-semibold text-white text-base sm:text-lg md:text-xl
-        transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.05] hover:-translate-y-0.5 shadow-md hover:shadow-lg "
+        transition-shadow duration-300 shadow-md hover:shadow-lg"
         style={{ 
-          backgroundColor: "#42A185",
-          "--reveal-delay": "100ms"
+          backgroundColor: "#42A185"
         } as React.CSSProperties}
         aria-label="Schedule a call on Calendly"
       >
         Schedule a call
-      </a>
+      </motion.a>
     </section>
   );
 }
