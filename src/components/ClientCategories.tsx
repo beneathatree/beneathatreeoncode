@@ -1,7 +1,60 @@
 "use client";
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function ClientCategories() {
+  const reduced = useReducedMotion();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const row1 = {
+    hidden: { opacity: 0, y: 15 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.0,
+        delay: 0,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
+  const row2 = {
+    hidden: { opacity: 0, y: 15 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.0,
+        delay: 0.2,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
+  const row3 = {
+    hidden: { opacity: 0, y: 15 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.0,
+        delay: 0.4,
+        ease: [0.16, 1, 0.3, 1] as const,
+      },
+    },
+  } as const;
+
   return (
     <section
       className="
@@ -18,7 +71,14 @@ export default function ClientCategories() {
       }}
     >
       {/* Row 1 */}
-      <div id="row1" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "100ms" } as React.CSSProperties}>
+      <motion.div
+        id="row1"
+        className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto"
+        variants={reduced ? {} : row1}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-150px 0% -150px 0%" }}
+      >
         <div
           className="w-full max-w-[500px] min-w-[280px] rounded-2xl p-0 shadow-xl"
           style={{
@@ -65,10 +125,17 @@ export default function ClientCategories() {
             while being secure, scalable, and reliable.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Row 2 */}
-      <div id="row2" className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "220ms" } as React.CSSProperties}>
+      <motion.div
+        id="row2"
+        className="flex flex-col md:flex-row-reverse items-center justify-center gap-10 max-w-[1000px] mx-auto"
+        variants={reduced ? {} : row2}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-150px 0% -150px 0%" }}
+      >
         <div
           className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0"
         >
@@ -109,10 +176,17 @@ export default function ClientCategories() {
             projects, freeing them to focus on what they do best.
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Row 3 */}
-      <div id="row3" className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto reveal" style={{ "--reveal-delay": "340ms" } as React.CSSProperties}>
+      <motion.div
+        id="row3"
+        className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1000px] mx-auto"
+        variants={reduced ? {} : row3}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-150px 0% -150px 0%" }}
+      >
         <div
           className="w-full sm:max-w-[500px] rounded-2xl shadow-xl bg-white p-0"
         >
@@ -156,7 +230,7 @@ export default function ClientCategories() {
             it to your team.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
