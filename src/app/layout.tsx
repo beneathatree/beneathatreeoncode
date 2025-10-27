@@ -10,7 +10,8 @@ const figtree = Figtree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-figtree",
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 const playfair = Playfair_Display({
@@ -18,7 +19,8 @@ const playfair = Playfair_Display({
   style: ["italic"],
   weight: ["600"],
   variable: "--font-playfair",
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -77,7 +79,43 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="no-js" suppressHydrationWarning>
+    <html 
+      lang="en" 
+      className="no-js" 
+      suppressHydrationWarning
+      style={{ 
+        backgroundColor: '#ffffff',
+        colorScheme: 'light dark'
+      }}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const bgColor = prefersDark ? '#0a0a0a' : '#ffffff';
+                document.documentElement.style.backgroundColor = bgColor;
+              })();
+            `,
+          }}
+        />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            html { background-color: #ffffff; }
+            @media (prefers-color-scheme: dark) {
+              html { background-color: #0a0a0a; }
+            }
+            body { 
+              background-color: #ffffff;
+              margin: 0;
+            }
+            @media (prefers-color-scheme: dark) {
+              body { background-color: #0a0a0a; }
+            }
+          `
+        }} />
+      </head>
       <body className={`${figtree.variable} ${playfair.variable} flex flex-col min-h-screen`}>
          {/* ✅ Keep fixed UI out of Lenis */}
          <Navbar />
